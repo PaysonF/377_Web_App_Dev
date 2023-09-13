@@ -2,7 +2,7 @@ body {
     background-color: black;
     font-family: "Arial Black", Helvetica, sans-serif;
     font-size: 2em;
-    color: lime;
+    color: gold;
 }
 
  .button {
@@ -10,7 +10,7 @@ body {
     color: white;
     cursor: pointer;
     font-family: Courier;
-    font-size: 12pt;
+    font-size: 22pt;
     margin-left: 10px;
     padding: 5px 10px 5px 10px;
     font-style:italic;
@@ -18,9 +18,8 @@ body {
 
  .button:hover {
     background-color: black;
-    color: green;
+    color: rgb(8, 7, 3);
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
     border:lime;
     border-Width:2px;
-    box
  }
