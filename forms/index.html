@@ -1,0 +1,71 @@
+        <html>
+    <head>
+        <script>
+
+        function login() {
+            alert('Access Denied!');
+        }
+
+        function register() {
+            var username = document.forms[0].elements['username'].value;
+            alert(username);
+        }
+
+        </script>
+    </head>
+    <body>
+        <h1>Form Examples</h1>
+
+        <h1>Login Form</h1>
+
+        <from>
+            Username:<input name="username" type="text" placeholder="Enter your username"><br>
+            Password:<input name="password" type="password" placeholder="Enter your password"><br>
+
+            <input value="Login" type="button" onclick="login()">
+        </from>
+
+        <h1>User Registration Form</h1>
+
+        <form>
+            First Name:<input value="firstname" type="text" placeholder="Enter First Name">
+            Last Name:<input name="lastname" type="text" placeholder="Enter Last Name"><br>
+            <br>
+
+            I am a...<br>
+            <input id="student" name="Role" type="radio" value="Student">
+            <label for="student">Student</label>
+            <br>
+
+            <input id="teacher" name="Role" type="radio" value="Teacher">
+            <label for="teacher">Teacher</label>
+            <br>
+            <br>
+
+            Select your school:<br>
+            <select>
+                <option>Cedar</option>
+                <option>Center</option>  
+                <option>HMS</option>
+                <option>HHS</option>
+            </select><br>
+            <br>
+
+            Date of Birth  <input name="DoB" type="date"><br>
+            <br>
+
+            Phone Number  <input name="DoB" type="tel"><br>
+            <br>
+
+            Email  <input name="DoB" type="email"><br>
+            <br>
+
+            <input id="agreement" name="Agreement" type="checkbox">
+            <label for="agreement">I agree to the terms of service</label><br>
+
+            <input value="Register" type="button" onclick="register()">
+
+            <br>
+        </form>
+    </body>
+</html>
