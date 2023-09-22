@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script>
+            function CalculateStats(){
+                var height = document.forms[0].elements['Height'].value;
+                var width = document.forms[0].elements['Width'].value;
+                
+                var area = height * width;
+                var perimeter = 2 * height + 2 * width;
+
+                document.getElementById('results').innerHTML =
+                    '<table>' +
+                        '<tr>' +
+                            '<td>Area</td>' +
+                            '<td>' + area + '</td>' +
+                        '</tr>' +
+                            '<tr>' +
+                                '<td>Perimeter</td>' +
+                                '<td>' + perimeter + '<td>' +
+                            '</tr>'
+                    '</table>'
+        }
+        </script>
+        
+    </head>
+    <body>
+        <h1>Rectangle Formulas</h1>
+        <form>
+            H:<input name="Height" type="number" placeholder="Enter Height"><br>
+            W:<input name="Width" type="number" placeholder="Enter Width"><br>
+
+            <input value="Get Statistics" type="button" onclick="CalculateStats()">
+
+            <div id="results"></div>
+        </form>
+    </body>
+</html>
