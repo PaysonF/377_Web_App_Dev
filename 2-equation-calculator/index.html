@@ -1,34 +1,36 @@
 <html>
-    <head onload="DetermineCalc(this.value)">
+    <head>
         <script src="scripts.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     </head>
 
-    <body>
+    <body onload="DetermineCalc('placeholder')"">
         <h1>Calculator</h1>
         <form>
             <h3>Choose Equation</h3>
             <select onchange="DetermineCalc(this.value)">
-                <option>- - - - -</option>
+                <option>Equations</option>
                 <option>Area</option>
                 <option>Perimeter</option>
                 <option>Volume</option>
             </select>
         </form>
 
-        <input type="number" id="first" placeholder="Length"/>
-        <input type="number" id="second" placeholder="Height"/>
-        <input type="number" id="third" placeholder="Width"/>
+        <input onchange="MathCalc()" type="number" id="first" placeholder="Enter Length"/>
+        <input onchange="MathCalc()" type="number" id="second" placeholder="Enter Height"/>
+        <input onchange="MathCalc()" type="number" id="third" placeholder="Enter Width"/>
         
         <div id="area"> area 
-
+            <br>
+            
         </div>
-        <div id="perimeter"> perimeter
-
+        <div id="perimeter">
+            <h5></h5>
         </div>
         <div id="volume"> volume
-
+            <h5></h5>
         </div>
+        <button id="Calc" onclick="">Calculate</button>
     </body>
 </html>
