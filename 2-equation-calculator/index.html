@@ -1,5 +1,5 @@
 <html>
-    <head>
+    <head onload="DetermineCalc(this.value)">
         <script src="scripts.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
@@ -11,13 +11,24 @@
             <h3>Choose Equation</h3>
             <select onchange="DetermineCalc(this.value)">
                 <option>- - - - -</option>
-                <option>Math</option>
                 <option>Area</option>
                 <option>Perimeter</option>
                 <option>Volume</option>
             </select>
         </form>
 
-        <div id="Equation"></div>
+        <input type="number" id="first" placeholder="Length"/>
+        <input type="number" id="second" placeholder="Height"/>
+        <input type="number" id="third" placeholder="Width"/>
+        
+        <div id="area"> area 
+
+        </div>
+        <div id="perimeter"> perimeter
+
+        </div>
+        <div id="volume"> volume
+
+        </div>
     </body>
 </html>
