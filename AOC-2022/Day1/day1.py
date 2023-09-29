@@ -1,6 +1,7 @@
 file = open('day1.txt', 'r')
 lines = file.readlines()
 
+
 total = 0
 max1 = 0
 for line in lines:
