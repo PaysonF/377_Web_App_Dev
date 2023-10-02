@@ -1,5 +1,5 @@
-file = open('day2.txt', 'r')
-#file = open('day2-exe.txt', 'r')
+#file = open('day2.txt', 'r')
+file = open('day2-exe.txt', 'r')
 lines = file.readlines()
 pTotal = 0
 

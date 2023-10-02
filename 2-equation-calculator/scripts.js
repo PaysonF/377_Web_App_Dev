@@ -1,4 +1,5 @@
 var equate = "";
+var answer = 0
 function ShowAndHide(){
     $('#first').show()
     $('#second').show()
@@ -6,7 +7,7 @@ function ShowAndHide(){
     $('#Calc').hide()
 }
 function DetermineCalc(equation) {
-   
+    ShowAndHide()
     if (equation == "Area") {
         $('#area').show()
         $('#math').hide()
@@ -15,7 +16,7 @@ function DetermineCalc(equation) {
 
         $('#third').hide()
         $('#Calc').show()
-        equate =="area"
+        equate ="area"
     } else if (equation == "Perimeter") {
         $('#perimeter').show()
         $('#math').hide()
@@ -24,14 +25,14 @@ function DetermineCalc(equation) {
 
         $('#third').hide()
         $('#Calc').show()
-        equate =="perimeter"
+        equate ="perimeter"
     } else if (equation == "Volume") {
         $('#volume').show()
         $('#math').hide()
         $('#area').hide()
         $('#perimeter').hide()
         $('#Calc').show()
-        equate =="volume"
+        equate ="volume"
     } else {
         $('#math').hide()
         $('#area').hide()
@@ -43,8 +44,12 @@ function DetermineCalc(equation) {
         $('#third').hide()
     }
 }
-var answer = 0
+
 function MathCalc() {
+    var first = parseInt(document.getElementById("first").value)
+    var second = parseInt(document.getElementById("second").value)
+    var third = parseInt(document.getElementById("third").value)
+
     if (equate=="area"){
         answer = first * second
     } else if (equate=="perimeter"){
@@ -52,5 +57,8 @@ function MathCalc() {
     } else if (equate =="volume"){
         answer = first * second * third
     }
-    alert(answer)
+}
+
+function showResult(thingy){
+    document.getElementById("answer") = 
 }

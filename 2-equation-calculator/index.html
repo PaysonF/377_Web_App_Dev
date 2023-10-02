@@ -3,6 +3,12 @@
         <script src="scripts.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+    document.getElementById("answer") = 
+    </script>
+    
+<!--rewrite code to sort of match rectangle-->
+    
     </head>
 
     <body onload="DetermineCalc('placeholder')"">
@@ -17,20 +23,14 @@
             </select>
         </form>
 
-        <input onchange="MathCalc()" type="number" id="first" placeholder="Enter Length"/>
-        <input onchange="MathCalc()" type="number" id="second" placeholder="Enter Height"/>
-        <input onchange="MathCalc()" type="number" id="third" placeholder="Enter Width"/>
+        <input type="number" id="first" placeholder="Enter Length"/>
+        <input type="number" id="second" placeholder="Enter Height"/>
+        <input type="number" id="third" placeholder="Enter Width"/>
         
-        <div id="area"> area 
-            <br>
-            
+        <br>
+        <button id="Calc" onclick="MathCalc()" onclick="showResults()">Calculate</button>
+        <div id="answer">
+        
         </div>
-        <div id="perimeter">
-            <h5></h5>
-        </div>
-        <div id="volume"> volume
-            <h5></h5>
-        </div>
-        <button id="Calc" onclick="">Calculate</button>
     </body>
 </html>
