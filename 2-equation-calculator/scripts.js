@@ -1,4 +1,4 @@
-var equate = "";
+var equate = "boop";
 var answer = 0
 function ShowAndHide(){
     $('#first').show()
@@ -8,12 +8,12 @@ function ShowAndHide(){
 }
 function DetermineCalc(equation) {
     ShowAndHide()
-    if (equation == "Area") {
+    if (document.forms[0].elements[0] == "Area") {
         $('#area').show()
         $('#math').hide()
         $('#perimeter').hide()
         $('#volume').hide()
-
+        alert(woza)
         $('#third').hide()
         $('#Calc').show()
         equate ="area"
@@ -43,22 +43,4 @@ function DetermineCalc(equation) {
         $('#second').hide()
         $('#third').hide()
     }
-}
-
-function MathCalc() {
-    var first = parseInt(document.getElementById("first").value)
-    var second = parseInt(document.getElementById("second").value)
-    var third = parseInt(document.getElementById("third").value)
-
-    if (equate=="area"){
-        answer = first * second
-    } else if (equate=="perimeter"){
-        answer = first * 2 + second * 2
-    } else if (equate =="volume"){
-        answer = first * second * third
-    }
-}
-
-function showResult(thingy){
-    document.getElementById("answer") = 
 }
