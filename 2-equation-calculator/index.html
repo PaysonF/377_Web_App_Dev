@@ -4,11 +4,10 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
-        function MathCalc() {
+        function MathCalc(){
             var first = parseInt(document.getElementById("first").value)
             var second = parseInt(document.getElementById("second").value)
             var third = parseInt(document.getElementById("third").value)
-
             if (equate=="area"){
                 answer = first * second
             } else if (equate=="perimeter"){
@@ -16,13 +15,18 @@
             } else if (equate =="volume"){
                 answer = first * second * third
             }
-            alert(document.forms[0].elements['choose'])
+            document.getElementById('answer').innerHTML = 
+            '<table>' +
+                        '<tr>' +
+                            '<td>Area</td>' +
+                            '<td>' + answer + '</td>' +
+                        '</tr>' +
+                    '</table>'
         }
-        
 
+        
     </script>
     
-<!--rewrite code to sort of match rectangle-->
     
     </head>
 
