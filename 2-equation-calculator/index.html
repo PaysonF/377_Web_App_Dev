@@ -5,6 +5,7 @@
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
         function MathCalc(){
+            var thing = ""
             var first = parseInt(document.getElementById("first").value)
             var second = parseInt(document.getElementById("second").value)
             var third = parseInt(document.getElementById("third").value)
@@ -18,7 +19,7 @@
             document.getElementById('answer').innerHTML = 
             '<table>' +
                         '<tr>' +
-                            '<td>Area</td>' +
+                            '<td>' + equate + '</td>' +
                             '<td>' + answer + '</td>' +
                         '</tr>' +
                     '</table>'
