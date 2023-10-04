@@ -1,4 +1,5 @@
-var equate = "";
+var equate = "boop";
+var answer = 0
 function ShowAndHide(){
     $('#first').show()
     $('#second').show()
@@ -6,16 +7,16 @@ function ShowAndHide(){
     $('#Calc').hide()
 }
 function DetermineCalc(equation) {
-   
-    if (equation == "Area") {
+    ShowAndHide()
+    if (document.forms[0].elements[0] == "Area") {
         $('#area').show()
         $('#math').hide()
         $('#perimeter').hide()
         $('#volume').hide()
-
+        alert(woza)
         $('#third').hide()
         $('#Calc').show()
-        equate =="area"
+        equate ="area"
     } else if (equation == "Perimeter") {
         $('#perimeter').show()
         $('#math').hide()
@@ -24,14 +25,14 @@ function DetermineCalc(equation) {
 
         $('#third').hide()
         $('#Calc').show()
-        equate =="perimeter"
+        equate ="perimeter"
     } else if (equation == "Volume") {
         $('#volume').show()
         $('#math').hide()
         $('#area').hide()
         $('#perimeter').hide()
         $('#Calc').show()
-        equate =="volume"
+        equate ="volume"
     } else {
         $('#math').hide()
         $('#area').hide()
@@ -42,15 +43,4 @@ function DetermineCalc(equation) {
         $('#second').hide()
         $('#third').hide()
     }
-}
-var answer = 0
-function MathCalc() {
-    if (equate=="area"){
-        answer = first * second
-    } else if (equate=="perimeter"){
-        answer = first * 2 + second * 2
-    } else if (equate =="volume"){
-        answer = first * second * third
-    }
-    alert(answer)
 }

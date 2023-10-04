@@ -3,13 +3,34 @@
         <script src="scripts.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+        function MathCalc() {
+            var first = parseInt(document.getElementById("first").value)
+            var second = parseInt(document.getElementById("second").value)
+            var third = parseInt(document.getElementById("third").value)
+
+            if (equate=="area"){
+                answer = first * second
+            } else if (equate=="perimeter"){
+                answer = first * 2 + second * 2
+            } else if (equate =="volume"){
+                answer = first * second * third
+            }
+            alert(document.forms[0].elements['choose'])
+        }
+        
+
+    </script>
+    
+<!--rewrite code to sort of match rectangle-->
+    
     </head>
 
-    <body onload="DetermineCalc('placeholder')"">
+    <body onload="DetermineCalc('placeholder')">
         <h1>Calculator</h1>
         <form>
             <h3>Choose Equation</h3>
-            <select onchange="DetermineCalc(this.value)">
+            <select id="choose" onchange="DetermineCalc(this.value)">
                 <option>Equations</option>
                 <option>Area</option>
                 <option>Perimeter</option>
@@ -17,20 +38,14 @@
             </select>
         </form>
 
-        <input onchange="MathCalc()" type="number" id="first" placeholder="Enter Length"/>
-        <input onchange="MathCalc()" type="number" id="second" placeholder="Enter Height"/>
-        <input onchange="MathCalc()" type="number" id="third" placeholder="Enter Width"/>
+        <input type="number" id="first" placeholder="Enter Length"/>
+        <input type="number" id="second" placeholder="Enter Height"/>
+        <input type="number" id="third" placeholder="Enter Width"/>
         
-        <div id="area"> area 
-            <br>
-            
+        <br>
+        <button id="Calc" onclick="MathCalc()" >Calculate</button>
+        <div id="answer">
+        
         </div>
-        <div id="perimeter">
-            <h5></h5>
-        </div>
-        <div id="volume"> volume
-            <h5></h5>
-        </div>
-        <button id="Calc" onclick="">Calculate</button>
     </body>
 </html>
