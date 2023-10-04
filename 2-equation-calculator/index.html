@@ -5,7 +5,6 @@
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
         function MathCalc(){
-            var thing = ""
             var first = parseInt(document.getElementById("first").value)
             var second = parseInt(document.getElementById("second").value)
             var third = parseInt(document.getElementById("third").value)
@@ -24,8 +23,6 @@
                         '</tr>' +
                     '</table>'
         }
-
-        
     </script>
     
     
@@ -33,6 +30,7 @@
 
     <body onload="DetermineCalc('placeholder')">
         <h1>Calculator</h1>
+        <hr>
         <form>
             <h3>Choose Equation</h3>
             <select id="choose" onchange="DetermineCalc(this.value)">
@@ -42,7 +40,7 @@
                 <option>Volume</option>
             </select>
         </form>
-
+        <hr>
         <input type="number" id="first" placeholder="Enter Length"/>
         <input type="number" id="second" placeholder="Enter Height"/>
         <input type="number" id="third" placeholder="Enter Width"/>
@@ -52,5 +50,5 @@
         <div id="answer">
         
         </div>
-    </body>
+    </b-ody>
 </html>
