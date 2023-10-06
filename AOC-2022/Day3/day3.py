@@ -1,8 +1,12 @@
 file = open('day3-exe.txt', 'r')
-<<<<<<< HEAD
-lines = file.readlines()
-line = lines.split()
-print(line)
-=======
-lines = file.readLines()
->>>>>>> f0c7c3bff655aab6a4e3d5ba12ed745e59a7b980
+bag = file.readlines()
+numb = 0
+for line in bag:
+    compart = bag[numb].split()
+    #look up half thing code
+    print(compart[0])
+    #c1 = (compart[0])
+    #c2 = (compart[1])
+    numb += 1
+
+
