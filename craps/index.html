@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Example SVG Game: Craps</title>
+    
+        <script src="https://code.jquery.com/jquery-3.7.1.js"integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
+        <script>
+            function rollDie(){
+                var roll = Math.floor(Math.random() * 6 + 1)
+                console.log(roll);
+
+                $('.pip').css("visibility", "hidden");
+
+
+                if(roll == 1) {
+                    $("#d1p4").css("visibility", "visible");
+                } else if (roll == 2) {
+                    $("#d1 d7").css("visibility", "hidden");
+                } else if (roll == 3) {
+                    $("p1 p4 p7").css("visibility", "hidden");
+                } else if (roll == 4) {
+                    $("p1, p3, p5, p7").css("visibility", "hidden");
+                } else if (roll == 5) {
+                    $("d1p1, #d1p2, #d1p3, #d1p5, #d1p6, #d1p7").css("visibility", "hidden");
+                } else {
+                    $("")d1 d2 d3 d5 d6 d7
+                }
+            }
+        </script>
+
+        <style>
+            .die {
+                fill:white;
+                stroke:black;
+                stroke-width:3;
+            }
+            .pip {
+                fill:black;
+                stroke: black;
+                visibility: visible;
+            }
+        
+
+        </style>
+
+    </head>
+
+    <body>
+        <h1>Example SVG Game: Craps</h1>
+
+        <svg height="300" width="300" style="background-color:green;">
+            <!--Die Box-->
+            <rect x="100" y="100" height="100" width="100" class="die" />
+            <!--Pips-->
+            <circle id="d1p1" class="pip" cx="125" cy="125" r="5" />
+            <circle id="d1p2" class="pip" cx="125" cy="150" r="5" />
+            <circle id="d1p3" class="pip" cx="125" cy="175" r="5" />
+            <circle id="d1p4" class="pip" cx="150" cy="150" r="5" />
+            <circle id="d1p5" class="pip" cx="175" cy="125" r="5" />
+            <circle id="d1p6" class="pip" cx="175" cy="150" r="5" />
+            <circle id="d1p7" class="pip" cx="175" cy="175" r="5" />
+
+        </svg>
+
+        <input type="button" value="Roll Die" onclick="rollDie()"/>
+    </body>
+
+
+
+
+</html>
