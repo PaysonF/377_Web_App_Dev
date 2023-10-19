@@ -7,5 +7,22 @@
                 fill:black;
                 stroke: black;
                 visibility: visible;
+            }   
+            #puck {
+                fill: black;
+                stroke:white;
+
+            }
+            #point {
+                fill:white;
+                font-family:Arial, sans-serif;
+                font-size:24pt;
+                text-anchor:middle;
+            }
+            #message {
+                fill:darkred;
+                font-family:Arial, sans-serif;
+                font-size:18pt;
+                text-anchor:middle;
             }
         

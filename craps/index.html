@@ -14,8 +14,7 @@
     <body>
         <h1>Example SVG Game: Craps</h1>
 
-        <svg height="300" width="500" style="background-color:green;">
-            
+        <svg height="400" width="500" style="background-color:green;">
             <g transform="translate(100,100)">
                 <!--Die Box-->
                 <rect height="100" width="100" class="die" />
@@ -40,9 +39,15 @@
                 <circle id="d2p5" class="pip" cx="75" cy="25" r="5" />
                 <circle id="d2p6" class="pip" cx="75" cy="50" r="5" />
                 <circle id="d2p7" class="pip" cx="75" cy="75" r="5" />
+                
             </g>
-           
-            
+
+            <!--Puck-->
+            <circle id="puck" cx="250" cy="300" r="25" />
+            <text id="point" x="250" y="311">X</text>
+
+            <text id="message" x="250" y="370">test</text>
+
 
         </svg>
 
