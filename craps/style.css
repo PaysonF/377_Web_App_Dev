@@ -8,6 +8,9 @@
                 stroke: black;
                 visibility: visible;
             }   
+            .spacer {
+                margin-left: 30px;
+            }
             #puck {
                 fill: black;
                 stroke:white;
@@ -25,4 +28,7 @@
                 font-size:18pt;
                 text-anchor:middle;
             }
-        
+            #controls {
+                font-size: 14pt;
+                
+            }

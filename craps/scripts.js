@@ -2,46 +2,84 @@ $(document).ready(function() {
     rollDice();
 })
 //if point = 0 then were on first roll, else on repeat
-var point = 0
+var MINIUM_BET = 5;
+var STARTING_FUNDS = 50;
+
+var point = 0;
+var bet = 0;
+var winnings = STARTING_FUNDS;
+
+
 
 
 function checkRoll(roll){
-    if (point == 0){ // the frist roll comes out
+    if (point == 0){ // the first roll comes out
         if (roll == 7 || roll == 11) {
-           // win 
-           $("#message").text("You Win!")
+            endRound(true)
         } 
             
         else if (roll == 2 || roll == 3 || roll == 12) {
-            $("#message").text("You Lose!")
+            endRound(false)
         } else {
         point = roll;
         }
     } else { //THis is a "re roll" after the point has been set
         if (roll == 7){
             //lose
-            $("#message").text("You Lose!")
-            $("#message").text("X")
-            point = 0
+            endRound(true)
         } else if (roll == point){
-            $("#message").text("You Win!")
-            $("#message").text("X")
-            point = 0
-            //win
+            endRound(false)
         }
     }
+    $("#point").text(roll)
+    $("#winnings").text(winnings)
 }
 
+function endRound(win) {
+    if (win) {
+        $("#message").text("You Win")
+        winnings += bet;
+    } else {
+        $("#message").text("You Lose!")
+        winnings -= bet;
+    }
+
+    console.log("Winnings: " + winnings);
+
+    $("#point").text("X");
+    $("#bet").val("");
+    $("#bet").prop("disabled", false);
+    $("#winnings").text("$" + winnings);
+}
+
+
 function rollDice() {
-    $('.pip').css("visibility", "hidden");
-    var roll1 = rollDie(1);
-    var roll2 = rollDie(2);
-
-    var total = roll1 + roll2;
-
-    checkRoll(total);
-
+    if (point > 0 || validateBet()) {
+        $("#point").text("X");
+        $("#message").text("");
+        var roll1 = rollDie(1);
+        var roll2 = rollDie(2);
+        var total = roll1 + roll2;
+        checkRoll(total);
+    } else {
+        
+    }
+    
+   
     console.log(total)
+}
+
+function validateBet() {
+    bet = parseInt($("#bet").val());
+
+    console.log("Bet: " + bet);
+
+    if (isNaN(bet) || bet < MINIUM_BET || bet > winnings) {
+        return false;
+    }
+
+    $("#bet").prop("disabled", true);
+    return true;
 }
 
 
