@@ -1,1 +1,4 @@
-
+function playGame(){
+    alert("wow")
+}
+    
