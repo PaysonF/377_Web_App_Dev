@@ -7,7 +7,7 @@
     </head> 
 
     <body>
-        <svg width="100%" height="95%" style="background-color:black;">
+        <svg width="100%" height="95%" onclick="changeaim()" style="background-color:black;">
             <!--Brick-->
             <symbol id="brick">
                 <rect width="2.75%" height="2.75%" style="fill:white"/>
@@ -15,14 +15,21 @@
 
             <!--Cannon-->
             <circle r="20"  cx="8%" cy="98%" style="fill:white" />
-            <rect width="25" height="75" x="7%" y="90%" style="fill:white" />
-            
-            <!--Title Screen-->
-            <rect class="titleborder" width="34%" height="9%" x="33%" y="34%" />
-            <text class="title" id="title" x="35%" y="40%" >Catacomb Cannoneer</text>
+            <rect id="barrel" width="25" height="75" x="7%" y="90%" style="fill:white" />
 
-            <rect class="titleborder" width="20%" height="9%" x="40%" y="43.5%" />
-            <text class="title" id="title" x="40%" y="55%" onclick="playGame()">Start Game</text>
+            <!--Ball-->
+            <circle id="ball" r="20"  cx="8%" cy="80%" style="fill:white" />
+
+            <!--Title Screen-->
+            <g id="mainmenu">
+                <rect class="titleborder" width="34%" height="9%" x="33%" y="34%" />
+                <text class="title" id="title" x="38%" y="40%" >Catacomb Cannoneer</text>
+
+                <rect class="titleborder" width="20%" height="9%" x="40%" y="45.5%" onclick="hideTitle()" />
+                <text class="title" id="title" x="43.5%" y="52%">Start Game</text>
+                
+            </g>
+            
                 <!--Pryamid Building-->
 
             <!--First Row-->
