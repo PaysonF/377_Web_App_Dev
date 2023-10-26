@@ -7,7 +7,7 @@
     </head> 
 
     <body>
-        <svg width="100%" height="95%" onclick="changeaim()" style="background-color:black;">
+        <svg width="1480" height="700" style="background-color:black;">
             <!--Brick-->
             <symbol id="brick">
                 <rect width="2.75%" height="2.75%" style="fill:white"/>
@@ -22,14 +22,19 @@
 
             <!--Title Screen-->
             <g id="mainmenu">
-                <rect class="titleborder" width="34%" height="9%" x="33%" y="34%" />
-                <text class="title" id="title" x="38%" y="40%" >Catacomb Cannoneer</text>
+                <rect class="whiteborder" width="34%" height="9%" x="33%" y="34%" />
+                <text class="title" x="35.5%" y="40.5%" >Catacomb Cannoneer</text>
 
-                <rect class="titleborder" width="20%" height="9%" x="40%" y="45.5%" onclick="hideTitle()" />
-                <text class="title" id="title" x="43.5%" y="52%">Start Game</text>
-                
+                <rect class="whiteborder" width="20%" height="9%" x="40%" y="45.5%" onclick="hideTitle()" />
+                <text class="title" x="42.5%" y="52%" onclick="hideTitle()">Start Game</text>
             </g>
             
+            <!--Move Triggers-->
+            <g id="anglechangers">
+                <rect id="right" class="whiteborder" />
+                <rect id="left" class="whiteborder" />
+
+            </g>
                 <!--Pryamid Building-->
 
             <!--First Row-->

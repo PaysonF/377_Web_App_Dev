@@ -3,12 +3,16 @@ body {
 }
 
 
-#title {
+.title {
     fill:white;
     font-size:50px;
 }
 
-.titleborder {
+.whiteborder {
     stroke:white;
     stroke-width:5px;
+}
+
+#mainmenu:hover {
+    cursor:default;
 }
