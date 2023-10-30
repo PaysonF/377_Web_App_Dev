@@ -2,14 +2,32 @@ document.onkeydown = changeAim;
 var angleAmount = 0;
 var start = false;
 var midfire = false;
-function hideTitle(){
+
+// at start of code initialze hiding tutorial stufff (group)
+
+function gameStart(){
     $('#mainmenu').hide()
     start = true;
 }
 
+function tutStart(){
+    alert("Tutorial")
+
+}
+
 function shoot(){
     alert("PEW")
-    //midfire = true;
+    ballAnimation();
+}
+
+function ballAnimation(){
+    $( "#ball" ).animate({
+        opacity: 0.25,
+        left: "+=50",
+        height: "toggle"
+      }, 5000, function() {
+        // Animation complete.
+      });
 }
 
 

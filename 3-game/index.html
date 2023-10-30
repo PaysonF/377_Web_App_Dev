@@ -13,9 +13,12 @@
                 <rect width="2.75%" height="2.75%" style="fill:white"/>
             </symbol>
 
+            <!--Point-->
+            <text id="point" x="500" y="500" >Point: 100</text>
+
             <!--Cannon-->
-            <rect id="barrel" width="25" height="50" x="7.5%" y="90%" style="fill:white" />
-            <circle r="25"  cx="118.4" cy="98%" style="fill:gray" />
+            <rect id="barrel" width="25" height="50" x="107" y="90%" style="fill:white" />
+            <circle id="roundabout" r="25"  cx="118.4" cy="98%" />
 
             <!--Ball-->
             <circle id="ball" r="20"  cx="118.4" cy="560" style="fill:white" />
@@ -25,29 +28,35 @@
                 <rect class="whiteborder" width="34%" height="9%" x="33%" y="34%" />
                 <text class="title" x="35.5%" y="40.5%" >Catacomb Cannoneer</text>
 
-                <rect class="whiteborder" width="20%" height="9%" x="40%" y="45.5%" onclick="hideTitle()" />
+                <rect class="whiteborder" width="20%" height="9%" x="40%" y="45.5%" onclick="gameStart()" />
                 <text class="title" x="42.5%" y="52%" onclick="hideTitle()">Start Game</text>
 
-                <rect class="whiteborder" width="20%" height="9%" x="40%" y="58%" onclick="hideTitle()" />
+                <rect class="whiteborder" width="20%" height="9%" x="40%" y="58%" onclick="tutStart()" />
                 <text class="title" x="44%" y="65%" >Tutorial</text>
-            </g>   
+            </g>
+            
+            <!--Tutorial-->
+            <g id="tutStuff"> 
+                <text class="title" x="0" y="0" style="fill:white;" >WOw</text>
+            </g>
+
                 <!--Pryamid Building-->
 
             <!--First Row--> 
-            <use href="#brick" id="r1b1" x="38.875%" y="96.5%" />
-            <use href="#brick" id="r1b2" x="42.125%" y="96.5%" />
-            <use href="#brick" id="r1b3" x="45.375%" y="96.5%" />
-            <use href="#brick" id="r1b4" x="48.625%" y="96.5%" />
-            <use href="#brick" id="r1b5" x="51.875%" y="96.5%" />
-            <use href="#brick" id="r1b6" x="55.125%" y="96.5%" />
-            <use href="#brick" id="r1b6" x="58.375%" y="96.5%" />
+            <use href="#brick" id="b1" x="38.875%" y="96.5%" />
+            <use href="#brick" id="b2" x="42.125%" y="96.5%" />
+            <use href="#brick" id="b3" x="45.375%" y="96.5%" />
+            <use href="#brick" id="b4" x="48.625%" y="96.5%" />
+            <use href="#brick" id="b5" x="51.875%" y="96.5%" />
+            <use href="#brick" id="b6" x="55.125%" y="96.5%" />
+            <use href="#brick" id="b7" x="58.375%" y="96.5%" />
             <!--Second Row-->
-            <use href="#brick" x="40.5%" y="93%" />
-            <use href="#brick" x="43.75%" y="93%" />
-            <use href="#brick" x="47%" y="93%" />
-            <use href="#brick" x="50.25%" y="93%" />
-            <use href="#brick" x="53.5%" y="93%" />
-            <use href="#brick" x="56.75%" y="93%" />
+            <use href="#brick" id="b8" x="40.5%" y="93%" />
+            <use href="#brick" id="b9" x="43.75%" y="93%" />
+            <use href="#brick" id="b10" x="47%" y="93%" />
+            <use href="#brick" id="b11" x="50.25%" y="93%" />
+            <use href="#brick" id="b12" x="53.5%" y="93%" />
+            <use href="#brick" id="b13" x="56.75%" y="93%" />
             <!--Third Row-->
             <use href="#brick" x="42.125%" y="89.5%" />
             <use href="#brick" x="45.375%" y="89.5%" />
