@@ -14,11 +14,11 @@
             </symbol>
 
             <!--Cannon-->
-            <circle r="20"  cx="8%" cy="98%" style="fill:white" />
-            <rect id="barrel" width="25" height="75" x="7%" y="90%" style="fill:white" />
+            <rect id="barrel" width="25" height="50" x="7.5%" y="90%" style="fill:white" />
+            <circle r="25"  cx="118.4" cy="98%" style="fill:gray" />
 
             <!--Ball-->
-            <circle id="ball" r="20"  cx="8%" cy="80%" style="fill:white" />
+            <circle id="ball" r="20"  cx="118.4" cy="560" style="fill:white" />
 
             <!--Title Screen-->
             <g id="mainmenu">
@@ -27,24 +27,20 @@
 
                 <rect class="whiteborder" width="20%" height="9%" x="40%" y="45.5%" onclick="hideTitle()" />
                 <text class="title" x="42.5%" y="52%" onclick="hideTitle()">Start Game</text>
-            </g>
-            
-            <!--Move Triggers-->
-            <g id="anglechangers">
-                <rect id="right" class="whiteborder" />
-                <rect id="left" class="whiteborder" />
 
-            </g>
+                <rect class="whiteborder" width="20%" height="9%" x="40%" y="58%" onclick="hideTitle()" />
+                <text class="title" x="44%" y="65%" >Tutorial</text>
+            </g>   
                 <!--Pryamid Building-->
 
-            <!--First Row-->
-            <use href="#brick" x="38.875%" y="96.5%" />
-            <use href="#brick" x="42.125%" y="96.5%" />
-            <use href="#brick" x="45.375%" y="96.5%" />
-            <use href="#brick" x="48.625%" y="96.5%" />
-            <use href="#brick" x="51.875%" y="96.5%" />
-            <use href="#brick" x="55.125%" y="96.5%" />
-            <use href="#brick" x="58.375%" y="96.5%" />
+            <!--First Row--> 
+            <use href="#brick" id="r1b1" x="38.875%" y="96.5%" />
+            <use href="#brick" id="r1b2" x="42.125%" y="96.5%" />
+            <use href="#brick" id="r1b3" x="45.375%" y="96.5%" />
+            <use href="#brick" id="r1b4" x="48.625%" y="96.5%" />
+            <use href="#brick" id="r1b5" x="51.875%" y="96.5%" />
+            <use href="#brick" id="r1b6" x="55.125%" y="96.5%" />
+            <use href="#brick" id="r1b6" x="58.375%" y="96.5%" />
             <!--Second Row-->
             <use href="#brick" x="40.5%" y="93%" />
             <use href="#brick" x="43.75%" y="93%" />
