@@ -1,18 +1,30 @@
 document.onkeydown = changeAim;
+$(document).ready(function() {
+    $('#tutStuff').hide();
+});
 var angleAmount = 0;
 var start = false;
 var midfire = false;
+var tutorial = false;
+// at start of code initialze hiding tutorial stufff (group) checkmark
 
-// at start of code initialze hiding tutorial stufff (group)
+//edit gameStart, make mainmenu show during tutorial and still work
 
 function gameStart(){
     $('#mainmenu').hide()
-    start = true;
+    $('#tutStuff').hide()
+    if (start == false){
+        start = true;
+    } else if (tutorial == true){
+        $('#tutStuff').show()
+        $('#mainmenu').show()
+    }
 }
 
 function tutStart(){
-    alert("Tutorial")
-
+    tutorial = true;
+    gameStart();
+    cannon = document.getElementById("barrel");
 }
 
 function shoot(){

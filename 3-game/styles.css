@@ -13,10 +13,27 @@ body {
     stroke-width:5px;
 }
 
+.maintut{
+    font-size:30px;
+}
+
+.subcatut{
+    font-size:27px;
+}
+
+.subtut{
+    font-size:20px;
+}
+
+
 #roundabout {
     fill:black;
     stroke:white;
     stroke-width:5px;
+}
+
+#tutStuff{
+    fill:white;
 }
 
 #point {

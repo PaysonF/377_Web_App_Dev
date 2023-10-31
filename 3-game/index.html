@@ -1,9 +1,9 @@
 <html>
     <head>
         <title>Catacomb Cannoneer</title>
-        <script src="scripts.js"></script>
         <link rel="stylesheet" type="text/css" href="styles.css"></link>
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script src="scripts.js"></script>
     </head> 
 
     <body>
@@ -29,15 +29,25 @@
                 <text class="title" x="35.5%" y="40.5%" >Catacomb Cannoneer</text>
 
                 <rect class="whiteborder" width="20%" height="9%" x="40%" y="45.5%" onclick="gameStart()" />
-                <text class="title" x="42.5%" y="52%" onclick="hideTitle()">Start Game</text>
+                <text class="title" x="42.5%" y="52%" onclick="gameStart()">Start Game</text>
 
                 <rect class="whiteborder" width="20%" height="9%" x="40%" y="58%" onclick="tutStart()" />
-                <text class="title" x="44%" y="65%" >Tutorial</text>
+                <text class="title" x="44%" y="65%" onclick="tutStart()" >Tutorial</text>
             </g>
             
             <!--Tutorial-->
             <g id="tutStuff"> 
-                <text class="title" x="0" y="0" style="fill:white;" >WOw</text>
+                <text class="maintut" x="10" y="30" >How To Play</text>
+                <text class="maintut" x="10" y="50" >---------------</text>
+                <text class="subcatut" x="0" y="150" >Controls</text>
+                <text class="subcatut" x="0" y="200" >-----</text>
+                <text class="subtut" x="" y="" >Aim Cannon: WASD / ARROW K</text>
+                <text class="subtut" x="" y="" ></text>
+                <text class="subtut" x="" y="" ></text>
+
+
+            
+                
             </g>
 
                 <!--Pryamid Building-->
