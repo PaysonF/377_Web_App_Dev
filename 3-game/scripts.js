@@ -11,13 +11,15 @@ var tutorial = false;
 //edit gameStart, make mainmenu show during tutorial and still work
 
 function gameStart(){
-    $('#mainmenu').hide()
-    $('#tutStuff').hide()
-    if (start == false){
-        start = true;
-    } else if (tutorial == true){
+    
+    if (tutorial == true){
         $('#tutStuff').show()
         $('#mainmenu').show()
+        tutorial = false;
+    } else if (start == false){
+        $('#mainmenu').hide()
+        $('#tutStuff').hide()
+        start = true;
     }
 }
 
@@ -33,14 +35,15 @@ function shoot(){
 }
 
 function ballAnimation(){
-    $( "#ball" ).animate({
-        opacity: 0.25,
-        left: "+=50",
-        height: "toggle"
-      }, 5000, function() {
-        // Animation complete.
-      });
-}
+    // $( "#ball" ).animate({
+    //     x: "+=100"
+    //   }, 5000, function() {
+    //     // Animation complete.
+    //   });
+
+    $("#ball").animate(
+        {svgTransform: 'translate(300 -300)'}, 2000); 
+  }
 
 
 

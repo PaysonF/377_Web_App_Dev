@@ -2,6 +2,8 @@
     <head>
         <title>Catacomb Cannoneer</title>
         <link rel="stylesheet" type="text/css" href="styles.css"></link>
+        <link rel="stylesheet" type="text/css" href="css/jquery.svg.css"> 
+        <script type="text/javascript" src="js/jquery.svg.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         <script src="scripts.js"></script>
     </head> 
@@ -28,21 +30,21 @@
                 <rect class="whiteborder" width="34%" height="9%" x="33%" y="34%" />
                 <text class="title" x="35.5%" y="40.5%" >Catacomb Cannoneer</text>
 
-                <rect class="whiteborder" width="20%" height="9%" x="40%" y="45.5%" onclick="gameStart()" />
-                <text class="title" x="42.5%" y="52%" onclick="gameStart()">Start Game</text>
+                <rect  class="whiteborder" class="gameStart" width="20%" height="9%" x="40%" y="45.5%" onclick="gameStart()" />
+                <text  class="title" class="gameStart" x="42.5%" y="52%" onclick="gameStart()">Start Game</text>
 
-                <rect class="whiteborder" width="20%" height="9%" x="40%" y="58%" onclick="tutStart()" />
-                <text class="title" x="44%" y="65%" onclick="tutStart()" >Tutorial</text>
+                <rect  class="whiteborder" class="tutStart" width="20%" height="9%" x="40%" y="58%" onclick="tutStart()" />
+                <text  class="title" class="tutStart" x="44%" y="65%" onclick="tutStart()" >Tutorial</text>
             </g>
             
             <!--Tutorial-->
             <g id="tutStuff"> 
                 <text class="maintut" x="10" y="30" >How To Play</text>
                 <text class="maintut" x="10" y="50" >---------------</text>
-                <text class="subcatut" x="0" y="150" >Controls</text>
-                <text class="subcatut" x="0" y="200" >-----</text>
-                <text class="subtut" x="" y="" >Aim Cannon: WASD / ARROW K</text>
-                <text class="subtut" x="" y="" ></text>
+                <text class="subcatut" x="10" y="75" >Controls</text>
+                <text class="subcatut" x="15" y="90" >---------</text>
+                <text class="subtut" x="10" y="110" >Aim Cannon: AD or &#8592;&#8594;</text>
+                <text class="subtut" x="10" y="130" >Fire Cannon: SPACE</text>
                 <text class="subtut" x="" y="" ></text>
 
 
@@ -68,25 +70,25 @@
             <use href="#brick" id="b12" x="53.5%" y="93%" />
             <use href="#brick" id="b13" x="56.75%" y="93%" />
             <!--Third Row-->
-            <use href="#brick" x="42.125%" y="89.5%" />
-            <use href="#brick" x="45.375%" y="89.5%" />
-            <use href="#brick" x="48.625%" y="89.5%" />
-            <use href="#brick" x="51.875%" y="89.5%" />
-            <use href="#brick" x="55.125%" y="89.5%" />
+            <use href="#brick" id="b14" x="42.125%" y="89.5%" />
+            <use href="#brick" id="b15" x="45.375%" y="89.5%" />
+            <use href="#brick" id="b16" x="48.625%" y="89.5%" />
+            <use href="#brick" id="b17" x="51.875%" y="89.5%" />
+            <use href="#brick" id="b18" x="55.125%" y="89.5%" />
             <!--Fourth Row-->
-            <use href="#brick" x="43.75%" y="86%" />
-            <use href="#brick" x="47%" y="86%" />
-            <use href="#brick" x="50.25%" y="86%" />
-            <use href="#brick" x="53.5%" y="86%" />
+            <use href="#brick" id="b19" x="43.75%" y="86%" />
+            <use href="#brick" id="b20" x="47%" y="86%" />
+            <use href="#brick" id="b21" x="50.25%" y="86%" />
+            <use href="#brick" id="b22" x="53.5%" y="86%" />
             <!--Fifth Row-->
-            <use href="#brick" x="45.375%" y="82.5%" />
-            <use href="#brick" x="48.625%" y="82.5%" />
-            <use href="#brick" x="51.875%" y="82.5%" />
+            <use href="#brick" id="b23" x="45.375%" y="82.5%" />
+            <use href="#brick" id="b24" x="48.625%" y="82.5%" />
+            <use href="#brick" id="b25" x="51.875%" y="82.5%" />
             <!--Sixth Row-->
-            <use href="#brick" x="47%" y="79%" />
-            <use href="#brick" x="50.25%" y="79%" />
+            <use href="#brick" id="b26" x="47%" y="79%" />
+            <use href="#brick" id="b27" x="50.25%" y="79%" />
             <!--Top-->
-            <use href="#brick" x="48.625%" y="75.5%" />    
+            <use href="#brick" id="b28" x="48.625%" y="75.5%" />    
         </svg>
     </body>
 </html>

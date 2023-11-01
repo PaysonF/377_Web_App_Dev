@@ -42,5 +42,6 @@ body {
 
 #mainmenu:hover {
     cursor:default;
+    user-select:none;
 }
 
