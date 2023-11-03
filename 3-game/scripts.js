@@ -9,9 +9,6 @@ var tutorial = false;
 var angley = 10;
 var anglex = 10;
 var expansion = 15;
-// at start of code initialze hiding tutorial stufff (group) checkmark
-
-//edit gameStart, make mainmenu show during tutorial and still work
 
 function gameStart(){
     
@@ -44,11 +41,15 @@ function boomAnimation(){
 var shootIntervalId = 0;
 var thing = 25;
 function shoot(){
-    $("#ball").attr('cx', 118.4);
-    $("#ball").attr('cy', 686);
-    $("#ball").attr('r', 15);
-    angley = angleAmount
-    shootIntervalId = setInterval(ballAnimation, 20);
+    if( midfire == false){
+        $("#ball").attr('cx', 118.4);
+        $("#ball").attr('cy', 686);
+        $("#ball").attr('r', 15);
+        midfire = true
+        angley = 50 - angleAmount
+        shootIntervalId = setInterval(ballAnimation, 20);
+    }
+    
 }
 
 function ballAnimation(){
@@ -56,12 +57,13 @@ function ballAnimation(){
     var y = parseInt($("#ball").attr('cy'));
     if (x > 573 && y > 500) {
         clearInterval(shootIntervalId)
-        boomIntervalId = setInterval(boomAnimation, 20);
+        boomIntervalId = setInterval(boomAnimation, 50);
+        midfire = false;
     }
     $("#ball").attr('cx', x + anglex);
     $("#ball").attr('cy', y - angley);
-    angley -= 2;
-
+    angley -= 1;
+    //work on above
 }
 
 
