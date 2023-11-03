@@ -6,7 +6,7 @@ var angleAmount = 0;
 var start = false;
 var midfire = false;
 var tutorial = false;
-var angley = 20;
+var angley = 10;
 var anglex = 10;
 var expansion = 15;
 // at start of code initialze hiding tutorial stufff (group) checkmark
@@ -46,25 +46,22 @@ var thing = 25;
 function shoot(){
     $("#ball").attr('cx', 118.4);
     $("#ball").attr('cy', 686);
+    $("#ball").attr('r', 15);
+    angley = angleAmount
     shootIntervalId = setInterval(ballAnimation, 20);
 }
 
 function ballAnimation(){
-    
     var x = parseInt($("#ball").attr('cx'));
     var y = parseInt($("#ball").attr('cy'));
-    if (x > 700) {
+    if (x > 573 && y > 500) {
         clearInterval(shootIntervalId)
         boomIntervalId = setInterval(boomAnimation, 20);
     }
-    console.log(angley);
     $("#ball").attr('cx', x + anglex);
     $("#ball").attr('cy', y - angley);
     angley -= 2;
-    if (anglex > 0){
-        anglex -= 0.5;
-    }
-    
+
 }
 
 
@@ -72,15 +69,15 @@ function ballAnimation(){
 function changeAim(e){
     console.log(angleAmount);
     if (start == true && midfire == false){
-        if (e.key == "ArrowRight" && angleAmount < 81){
+        if (e.key == "ArrowRight" && angleAmount < 81 || e.key == "d" && angleAmount < 81){
             console.log("right");
             angleAmount += 2
-        }else if(e.key == "ArrowLeft" && angleAmount > 0){
+        }else if(e.key == "ArrowLeft" && angleAmount > 0 || e.key == "a" && angleAmount > 0){
             console.log("Left");
             angleAmount += -2
         } else if(e.key == " "){
             angley += angleAmount;
-            anglex += angleAmount;
+            //anglex += angleAmount;
             shoot();
         }
         cannon = document.getElementById("barrel");
