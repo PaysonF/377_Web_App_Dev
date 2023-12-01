@@ -2,11 +2,11 @@ file = open('1-exe.txt', 'r')
 lines = file.readlines()
 
 numlist = ['0','1','2','3','4','5','6','7','8','9']
+rev = len(numlist)
 offset = 0
 checknumb = 0
 
 total = 0
-rev = 100
 
 
 dig1 = 0
@@ -24,9 +24,12 @@ for line in lines:
                 print('dig1 in')
         # checks for second number
         for x in range(len(numlist)):
-            if checknumb == numlist[x] and dig2 == 0:
-                dig2 = checknumb
-                print('dig2 in')
+            if rev != 2:
+                rev -= 1
+                if checknumb == numlist[rev] and dig2 == 0:
+                    dig2 = checknumb
+                    print('dig2 in') 
+            
         offset += 1
         if offset == len(line):
             offset = 0
