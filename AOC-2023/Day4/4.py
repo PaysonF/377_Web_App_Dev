@@ -11,16 +11,12 @@ for line in lines:
     change = 0
     for x in bob:
         numwin = 0
-        if x.isdigit():
+        if x.isdigit() and change != 5 and change != 6:
             if bob[change - 1].isdigit():
-                numwin = int(temp + x)
+                numwin = int(str(bob[change - 1]) + str(x))
                 #print(numwin)
-            temp = x
-            if numwin == 0 and bob[change + 1].isdigit() == False:
-                numwin = x
-                print(numwin)
-            if x == bob[5] and change == 5:
-                print(bob[5])
-        if change != len(bob):
-            change += 1
-            
+            if bob[change - 1].isdigit() == False:
+                numwin = int(x)
+        print(x)
+        print('Change:' + str(numwin))
+        change += 1
