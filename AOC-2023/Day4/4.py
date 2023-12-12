@@ -10,13 +10,13 @@ for line in lines:
     saul = tim[1]
     change = 0
     for x in bob:
-        numwin = 0
+        #numwin = 0
         if x.isdigit() and change != 5 and change != 6:
             if bob[change - 1].isdigit():
-                numwin = int(str(bob[change - 1]) + str(x))
+                numwin += 1
                 #print(numwin)
             if bob[change - 1].isdigit() == False:
-                numwin = int(x)
+                numwin += 1
         print(x)
-        print('Change:' + str(numwin))
+        print('Numwin:' + str(numwin))
         change += 1
