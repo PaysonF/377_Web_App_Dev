@@ -1,6 +1,7 @@
 file = open('4-exe.txt', 'r')
 lines = file.readlines()
 
+num = 0
 change = 0
 numwin = 0
 
@@ -11,12 +12,9 @@ for line in lines:
     change = 0
     for x in bob:
         #numwin = 0
-        if x.isdigit() and change != 5 and change != 6:
-            if bob[change - 1].isdigit():
-                numwin += 1
-                #print(numwin)
-            if bob[change - 1].isdigit() == False:
-                numwin += 1
-        print(x)
-        print('Numwin:' + str(numwin))
+        if x.isdigit():
+            if change != len(bob):
+                if bob[change + 1].isdigit():
+                    checknum = str(x + bob[change + 1])
         change += 1
+    print(numwin)
