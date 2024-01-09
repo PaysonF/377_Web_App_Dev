@@ -10,16 +10,29 @@
         <h2>Student Enrollment</h2>
 
         <p> Filter by last name starting with
-            <a href="student-list.php?last_name=A">A</a>
-            <a href="student-list.php?last_name=B">B</a>
-            <a href="student-list.php?last_name=C">C</a>
+        <a href="student-list.php?last_name=All">All</a>
+<?php
+for ($i = 0; $i < 26; $i++)
+{
+    $letter = chr($i + ord("A"));
+    echo "<a href='student-list.php?last_name=$letter'>$letter</a> ";
+}          
+                    
+
+?>
+        <br><br>
+        Filter by first name contains
+        <Form action="student-list.php">
+            <input type="text" name="first_name" />
+            <input type="submit" value="filter" />
+        </p>
+    
         <table border ='1'>
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>YOG</th>
             </tr>
-
 <?php
 
 $servername = "localhost";
@@ -35,10 +48,19 @@ if ($connection->connect_error)
 }
 
 extract($_REQUEST);
-//Magicly we now hae access to a $last_name variable
+//Magicly we now have access to a $last_name variable and a $first_name variable
 
+$sql = "SELECT stu_first_name, stu_last_name, stu_yog FROM students";
 
-$sql = "SELECT stu_first_name, stu_last_name, stu_yog FROM students WHERE stu_last_name LIKE '$last_name%' ORDER BY stu_last_name, stu_first_name";
+if (isset($last_name))
+{
+    $sql .= " WHERE stu_last_name LIKE '$last_name%' ";
+} elseif (isset($first_name))
+{
+    $sql .= " WHERE stu_last_name LIKE '$first_name%' ";
+}
+
+$sql .= " ORDER BY stu_last_name, stu_first_name";
 
 $result = $connection->query($sql);
 
