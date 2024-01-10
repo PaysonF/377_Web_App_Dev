@@ -48,30 +48,37 @@ if ($connection->connect_error)
 }
 
 extract($_REQUEST);
-//Magicly we now have access to a $last_name variable and a $first_name variable
-
-$sql = "SELECT stu_first_name, stu_last_name, stu_yog FROM students";
-
+//Magiacly we now have access to a $last_name variable and a $first_name variable
+$clickstudent = "" . "%";
+if (isset($clickstudent)) 
+{
+    $sql = "SELECT * FROM students WHERE stu_first_name LIKE '$clickstudent'";
+} else
+{
+    $sql = "SELECT stu_first_name, stu_last_name, stu_yog FROM students";
+}
 if (isset($last_name))
 {
     $sql .= " WHERE stu_last_name LIKE '$last_name%' ";
 } elseif (isset($first_name))
 {
     $sql .= " WHERE stu_last_name LIKE '$first_name%' ";
-}
-
+} 
 $sql .= " ORDER BY stu_last_name, stu_first_name";
 
 $result = $connection->query($sql);
 
 while ($row = $result->fetch_assoc())
 {
-    echo "<tr>";
+    echo "<tr a href='$clickstudent = stu_first_name'>";
     echo "<td>" . $row['stu_first_name'] . "</td>";
     echo "<td>" . $row['stu_last_name'] . "</td>";
     echo "<td>" . $row['stu_yog'] . "</td>";
     echo "</tr>";
 }
+// <Form action="student-list.php">
+//<input type="text" name="first_name" />
+//<input type="submit" value="filter" />
 ?>
         </table>
     </body>
