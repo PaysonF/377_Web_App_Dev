@@ -1,21 +1,23 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>HMDB: The Hanover Movie Database</title>
+        <title>hMDB - The Hanover Movie Database</title>
     </head>
-    
+
     <body>
-        <h1>HMDB - The Hanover Movie Database</h1>
+        <h1>hMDB - The Hanover Movie Database</h1>
 
         <h2>New Movie Details</h2>
 
-        <form action = "save-movie.php">
-            Title: <input type ="text" name="title" />
+        <form action="save-movie.php">
+            Title: <input type="text" name="title" />
             <br />
-            Year: <input type ="text" name="title" />
+            Year: <input type="text" name="year" />
             <br />
-            Genre: <input type ="text" name="title" />
+            Genre: <input type="text" name="genre" />
             <br />
-            <input type ="submit" value="Save" />
+            <input type="submit" value="Save" />
         </form>
+
     </body>
+</html>

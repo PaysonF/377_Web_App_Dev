@@ -1,24 +1,15 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname = "hmdb";
+include("library.php");
 
-// Connect to the database and make sure it was sucessful
-$connection = new mysqli($servername, $username, $password, $dbname);
-if ($connection->connect_error)
-{
-    die('Connection failed' . $connection->connect_error);
-}
+$connection = getDatabaseConnection();
 
 extract($_REQUEST);
 
-$sql = "INSERT INTO movies (mov_title, mov_year, mov_genre) VALUES ('$title', $year, '$genre') ";
-
-echo $sql;
+$sql = "INSERT INTO movies (mov_title, mov_year, mov_genre) VALUES ('$title', $year, '$genre')";
 
 $connection->query($sql);
 
 echo "Created a movie!";
-echo "<a href ='new-move.php'>new movie created, create another one?</a>";
+echo "<br/>";
+echo "<a href='new-movie.php'>Create another</a>";
