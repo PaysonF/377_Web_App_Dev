@@ -1,15 +1,30 @@
 <?php
 
-include("library.php");
+include('library.php');
 
-$connection = getDatabaseConnection();
+$connection = get_database_connection();
 
-extract($_REQUEST);
+$sql = '';
 
-$sql = "INSERT INTO movies (mov_title, mov_year, mov_genre) VALUES ('$title', $year, '$genre')";
+if (isset($id) && $id != '')
+{
+    $sql =<<<SQL
+    UPDATE movies
+       SET mov_title = '$title',
+           mov_year = $year,
+           mov_genre = '$genre',
+           mov_imdb_id = '$imdb_id'
+     WHERE mov_id = $id
+    SQL;
+}
+else
+{
+    $sql =<<<SQL
+    INSERT INTO movies (mov_title, mov_year, mov_genre, mov_imdb_id)
+    VALUES ('$title', $year, '$genre', '$imdb_id')
+    SQL;
+}
 
 $connection->query($sql);
 
-echo "Created a movie!";
-echo "<br/>";
-echo "<a href='new-movie.php'>Create another</a>";
+header('Location: index.php');
