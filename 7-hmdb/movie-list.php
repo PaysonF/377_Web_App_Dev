@@ -5,6 +5,8 @@
             <th>Year</th>
             <th>Genre</th>
             <th>iMDB Link</th>
+            <th>Rating</th>
+            <th>Duration</th>
         </tr>
     </thead>
 
@@ -14,9 +16,9 @@
 $connection = get_database_connection();
 
 $sql =<<<SQL
-SELECT mov_id, mov_title, mov_year, mov_genre, mov_imdb_id
+SELECT *
   FROM movies
- ORDER BY mov_title, mov_year
+ ORDER BY mov_title, mov_year, mov_rating
 SQL;
 
 $result = $connection->query($sql);
@@ -34,6 +36,8 @@ while ($row = $result->fetch_assoc())
         echo '<a href="https://www.imdb.com/title/' . $row['mov_imdb_id'] . '" target="_blank" title="View on iMDB"><i class="bi bi-film"></i></a>';
     }
     echo '</td>';
+    echo '<td>' . $row['mov_rating'] . '</td>';
+    echo '<td>' . $row['mov_duration'] . ' Minutes' . '</td>';
     echo '</tr>';
 }
 
