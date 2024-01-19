@@ -71,9 +71,26 @@ if (isset($id))
         <input type="text" class="form-control" id="duration" name="duration" value="<?php echo $duration ?>" />
     </div>
 
+    <div class="mb-3">
+        <label for="director" class="form-label">Duration</label>
+        <input type="text" class="form-control" id="director" name="director" value="<?php echo $director ?>" />
+    </div>
+
+    <!--Combine earnings and budget into own table, or just one thing, and wokr on others -->
+
+    <div class="mb-3">
+        <label for="earnings" class="form-label">Duration</label>
+        <input type="text" class="form-control" id="earnings" name="earnings" value="<?php echo $earnings ?>" />
+    </div>
+
+    <div class="mb-3">
+        <label for="budget" class="form-label">Duration</label>
+        <input type="text" class="form-control" id="budget" name="budget" value="<?php echo $budget ?>" />
+    </div>
+
     <button type="submit" class="btn btn-primary">Save</button>
     <a href="index.php?content=movie-list" class="btn btn-secondary" role="button" aria-disabled="true">Cancel</a>
-<?php if (isset($id)) { ?>
+    <?php if (isset($id)) { ?>
     <button type="button" class="btn btn-danger" onclick="deleteMovie()">Delete</button>
     <script>
 
