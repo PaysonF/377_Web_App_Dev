@@ -18,7 +18,7 @@ $connection = get_database_connection();
 $sql =<<<SQL
 SELECT *
   FROM books
- ORDER BY mov_title, mov_year, mov_rating
+ ORDER BY bok_title
 SQL;
 
 $result = $connection->query($sql);
@@ -26,18 +26,18 @@ while ($row = $result->fetch_assoc())
 {
     echo '<tr>';
     echo '<td>';
-    echo '<a href="index.php?content=book-detail&id=' . $row['mov_id'] . '">' . $row['mov_title'] . '</a>';
+    echo '<a href="index.php?content=book-detail&id=' . $row['bok_id'] . '">' . $row['bok_title'] . '</a>';
     echo '</td>';
-    echo '<td>' . $row['mov_year'] . '</td>';
-    echo '<td>' . $row['mov_genre'] . '</td>';
+    echo '<td>' . $row['bok_title'] . '</td>';
+    echo '<td>' . $row['bok_author'] . '</td>';
     echo '<td>';
+    /* format for link,
     if ($row['mov_imdb_id'] != '')
     {
         echo '<a href="https://www.imdb.com/title/' . $row['mov_imdb_id'] . '" target="_blank" title="View on iMDB"><i class="bi bi-film"></i></a>';
     }
     echo '</td>';
-    echo '<td>' . $row['mov_rating'] . '</td>';
-    echo '<td>' . $row['mov_duration'] . ' Minutes' . '</td>';
+    */
     echo '</tr>';
 }
 
@@ -45,4 +45,4 @@ while ($row = $result->fetch_assoc())
     </tbody>
 </table>
 
-<a href="index.php?content=movie-detail" class="btn btn-primary" role="button" aria-disabled="true">Add a Movie</a>
+<a href="index.php?content=book-detail" class="btn btn-primary" role="button" aria-disabled="true">Add a Book</a>
