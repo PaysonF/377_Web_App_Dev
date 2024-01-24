@@ -4,9 +4,9 @@
             <th>Title</th>
             <th>Author</th>
             <th>Genre</th>
-            <th>BookWebsite Link</th>
-            <th>Rating</th>
             <th>Page Length</th>
+            <th>Rating</th>
+            <th>Release</th>
         </tr>
     </thead>
 
@@ -28,15 +28,18 @@ while ($row = $result->fetch_assoc())
     echo '<td>';
     echo '<a href="index.php?content=book-detail&id=' . $row['bok_id'] . '">' . $row['bok_title'] . '</a>';
     echo '</td>';
-    echo '<td>' . $row['bok_title'] . '</td>';
     echo '<td>' . $row['bok_author'] . '</td>';
-    echo '<td>';
+    echo '<td>' . $row['bok_genre'] . '</td>';
+    echo '<td>' . $row['bok_length'] . '</td>';
+    echo '<td>' . $row['bok_rating'] . ' / 5' . '</td>';
+    echo '<td>' . $row['bok_release'] . '</td>';
     /* format for link,
     if ($row['mov_imdb_id'] != '')
     {
         echo '<a href="https://www.imdb.com/title/' . $row['mov_imdb_id'] . '" target="_blank" title="View on iMDB"><i class="bi bi-film"></i></a>';
     }
     echo '</td>';
+    echo '<td>' . $row['bok_series'] . '</td>';
     */
     echo '</tr>';
 }
@@ -46,3 +49,4 @@ while ($row = $result->fetch_assoc())
 </table>
 
 <a href="index.php?content=book-detail" class="btn btn-primary" role="button" aria-disabled="true">Add a Book</a>
+<a href="index.php?content=book-detail" class="btn btn-secondary" role="button" aria-disabled="true">Sort By</a>

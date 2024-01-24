@@ -14,14 +14,17 @@ if (isset($id) && $id != '')
            bok_author = '$author',
            bok_genre = '$genre',
            bok_length = '$length',
+           bok_rating = '$rating',
+           bok_release = '$release',
+           bok_series = '$series'
      WHERE bok_id = $id
     SQL;
 }
 else
 {
     $sql =<<<SQL
-    INSERT INTO books (bok_title, bok_author, bok_genre, bok_length)
-    VALUES ('$title', '$author', '$genre', '$length')
+    INSERT INTO books (bok_title, bok_author, bok_genre, bok_length, bok_rating, bok_release, bok_series)
+    VALUES ('$title', '$author', '$genre', '$length', '$rating', '$release', 'series')
     SQL;
 }
 

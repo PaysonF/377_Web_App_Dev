@@ -4,6 +4,8 @@ $title = '';
 $author = '';
 $genre = '';
 $length = '';
+$rating = '';
+$release = '';
 
 if (isset($id))
 {
@@ -22,6 +24,9 @@ if (isset($id))
     $author = $row['bok_author'];
     $genre = $row['bok_genre'];
     $length = $row['bok_length'];
+    $rating = $row['bok_rating'];
+    $release = $row['bok_release'];
+    $series = $row['bok_series'];
 }
 
 ?>
@@ -54,7 +59,17 @@ if (isset($id))
 
     <div class="mb-3">
         <label for="length" class="form-label">Length</label>
-        <input type="number" class="form-control" id="length" name="length" value="<?php echo $length ?>" />
+        <input type="text" class="form-control" id="length" name="length" value="<?php echo $length ?>" />
+    </div>
+
+    <div class="mb-3">
+        <label for="rating" class="form-label">Rating</label>
+        <input type="text" class="form-control" id="rating" name="rating" value="<?php echo $rating ?>" />
+    </div>
+
+    <div class="mb-3">
+        <label for="release" class="form-label">Release</label>
+        <input type="date" class="form-control" id="release" name="release" value="<?php echo $release ?>" />
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
