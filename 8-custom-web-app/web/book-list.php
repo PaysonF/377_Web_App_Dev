@@ -5,7 +5,7 @@
             <th>Author</th>
             <th>Genre</th>
             <th>Page Length</th>
-            <th>Rating</th>
+            <th>GoodReads Rating</th>
             <th>Release</th>
         </tr>
     </thead>
@@ -49,4 +49,5 @@ while ($row = $result->fetch_assoc())
 </table>
 
 <a href="index.php?content=book-detail" class="btn btn-primary" role="button" aria-disabled="true">Add a Book</a>
-<a href="index.php?content=book-detail" class="btn btn-secondary" role="button" aria-disabled="true">Sort By</a>
+<!-- Here there will be sort-->
+<a href="index.php?content=book-sort" class="btn btn-success role="button" aria-disabled="true">Sort By</a>

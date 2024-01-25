@@ -46,7 +46,7 @@ if (isset($id))
     <div class="mb-3">
         <label for="genre" class="form-label">Genre</label>
         <select class="form-select" name="genre">
-            <option <?php echo $genre == 'Action' ? 'selected' : '' ?>>Action</option>
+            <option <?php echo $genre == 'Fantasy' ? 'selected' : '' ?>>Fantasy</option>
             <option <?php echo $genre == 'Comedy' ? 'selected' : '' ?>>Comedy</option>
             <option <?php echo $genre == 'Drama' ? 'selected' : '' ?>>Drama</option>
             <option <?php echo $genre == 'Family' ? 'selected' : '' ?>>Family</option>
