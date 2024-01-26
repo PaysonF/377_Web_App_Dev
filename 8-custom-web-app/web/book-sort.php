@@ -33,7 +33,7 @@ if (isset($id))
 ?>
 <form action="save-book.php">
     <div class="mb-3">
-        <label for="sort" class="form-label">Sorting</label>
+        <label for="sort" class="form-label">Sorting (Top to Bottom, First To last)</label>
         <select class="form-select" name="sort">
             <option <?php echo $genre == 'Title' ? 'selected' : '' ?>>Title</option>
             <option <?php echo $genre == 'Author' ? 'selected' : '' ?>>Author</option>
