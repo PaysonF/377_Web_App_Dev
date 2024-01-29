@@ -2,10 +2,10 @@
     <thead>
         <tr>
             <th>Title</th>
-            <th>Author</th>
-            <th>Genre</th>
-            <th>Page Length</th>
-            <th>GoodReads Rating</th>
+            <th style="color:red">Author</th>
+            <th style="color:green">Genre</th>
+            <th style="color:grey">Page Length</th>
+            <th style="color:gold">GoodReads Rating</th>
             <th>Release</th>
         </tr>
     </thead>
@@ -28,10 +28,10 @@ while ($row = $result->fetch_assoc())
     echo '<td>';
     echo '<a href="index.php?content=book-detail&id=' . $row['bok_id'] . '">' . $row['bok_title'] . '</a>';
     echo '</td>';
-    echo '<td>' . $row['bok_author'] . '</td>';
-    echo '<td>' . $row['bok_genre'] . '</td>';
-    echo '<td>' . $row['bok_length'] . '</td>';
-    echo '<td>' . $row['bok_rating'] . ' / 5' . '</td>';
+    echo '<td style="color:red">' . $row['bok_author'] . '</td>';
+    echo '<td style="color:green">' . $row['bok_genre'] . '</td>';
+    echo '<td style="color:grey">' . $row['bok_length'] . ' pages' . '</td>';
+    echo '<td style="color:gold;font-weight:bold">' . $row['bok_rating'] . ' / 5' . '</td>';
     echo '<td>' . $row['bok_release'] . '</td>';
     /* format for link,
     if ($row['mov_imdb_id'] != '')

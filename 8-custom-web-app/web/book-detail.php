@@ -6,6 +6,7 @@ $genre = '';
 $length = '';
 $rating = '';
 $release = '';
+$series = '';
 
 if (isset($id))
 {
@@ -51,7 +52,7 @@ if (isset($id))
             <option <?php echo $genre == 'Drama' ? 'selected' : '' ?>>Drama</option>
             <option <?php echo $genre == 'Family' ? 'selected' : '' ?>>Family</option>
             <option <?php echo $genre == 'Horror' ? 'selected' : '' ?>>Horror</option>
-            <option <?php echo $genre == 'Sci-Fi' ? 'selected' : '' ?>>Sci-Fi</option>
+            <option <?php echo $genre == 'Dystopian' ? 'selected' : '' ?>>Dystopian</option>
             <option <?php echo $genre == 'Thriller' ? 'selected' : '' ?>>Thriller</option>
             <option <?php echo $genre == 'Documentry' ? 'selected' : '' ?>>Documentry</option>
         </select>
@@ -70,6 +71,11 @@ if (isset($id))
     <div class="mb-3">
         <label for="release" class="form-label">Release</label>
         <input type="date" class="form-control" id="release" name="release" value="<?php echo $release ?>" />
+    </div>
+
+    <div class="mb-3">
+        <label for="series" class="form-label">Series</label>
+        <input type="text" class="form-control" id="series" name="series" value="<?php echo $series ?>" />
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
