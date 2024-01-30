@@ -7,6 +7,7 @@
             <th style="color:grey">Page Length</th>
             <th style="color:gold">GoodReads Rating</th>
             <th>Release</th>
+            <th>Series</th>
         </tr>
     </thead>
 
@@ -33,6 +34,7 @@ while ($row = $result->fetch_assoc())
     echo '<td style="color:grey">' . $row['bok_length'] . ' pages' . '</td>';
     echo '<td style="color:gold;font-weight:bold">' . $row['bok_rating'] . ' / 5' . '</td>';
     echo '<td>' . $row['bok_release'] . '</td>';
+    echo '<td>' . $row['bok_series'] . '</td>';
     /* format for link,
     if ($row['mov_imdb_id'] != '')
     {

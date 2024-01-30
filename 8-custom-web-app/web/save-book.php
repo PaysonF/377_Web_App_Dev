@@ -10,7 +10,7 @@ if (isset($id) && $id != '')
 {
     $sql =<<<SQL
     UPDATE books
-       SET book_title = '$title',
+       SET bok_title = '$title',
            bok_author = '$author',
            bok_genre = '$genre',
            bok_length = '$length',

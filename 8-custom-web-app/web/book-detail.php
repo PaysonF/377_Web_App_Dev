@@ -54,7 +54,7 @@ if (isset($id))
             <option <?php echo $genre == 'Horror' ? 'selected' : '' ?>>Horror</option>
             <option <?php echo $genre == 'Dystopian' ? 'selected' : '' ?>>Dystopian</option>
             <option <?php echo $genre == 'Thriller' ? 'selected' : '' ?>>Thriller</option>
-            <option <?php echo $genre == 'Documentry' ? 'selected' : '' ?>>Documentry</option>
+            <option <?php echo $genre == 'Science Fiction' ? 'selected' : '' ?>>Science Fiction</option>
         </select>
     </div>
 
