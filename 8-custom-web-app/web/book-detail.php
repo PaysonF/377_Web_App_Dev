@@ -78,6 +78,22 @@ if (isset($id))
         <input type="text" class="form-control" id="series" name="series" value="<?php echo $series ?>" />
     </div>
 
+    <div class="mb-3">
+        <label for="moviecheck" class="form-label">MovieCheck</label>
+        <input type="text" class="form-control" id="moviecheck" name="moviecheck" value="<?php echo $series ?>" />
+    </div>
+
+    <div class="mb-3">
+        <label for="movieduration" class="form-label">MovieDuration</label>
+        <input type="number" class="form-control" id="movieduration" name="movieduration" value="<?php echo $series ?>" />
+    </div>
+
+    <div class="mb-3">
+        <label for="movieduration" class="form-label">Book Sales</label>
+        <input type="number" class="form-control" id="movieduration" name="movieduration" value="<?php echo $series ?>" />
+    </div>
+
+
     <button type="submit" class="btn btn-primary">Save</button>
     <a href="index.php?content=book-list" class="btn btn-secondary" role="button" aria-disabled="true">Cancel</a>
     <?php if (isset($id)) { ?>
