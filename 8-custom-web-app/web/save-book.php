@@ -20,12 +20,16 @@ if (isset($id) && $id != '')
      WHERE bok_id = $id
     SQL;
 }
-else
+elseif(book_title != '')
 {
     $sql =<<<SQL
     INSERT INTO books (bok_title, bok_author, bok_genre, bok_length, bok_rating, bok_release, bok_series)
     VALUES ('$title', '$author', '$genre', '$length', '$rating', '$release', 'series')
     SQL;
+}
+else
+{
+    //Write code to do somethnig
 }
 
 $connection->query($sql);
