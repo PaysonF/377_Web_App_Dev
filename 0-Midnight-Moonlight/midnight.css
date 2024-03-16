@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+}
+
+polygon {
+    fill: black;
+    stroke: white;
+    stroke-width: 11;
+}
+
+.moonlit {
+    opacity: 0.5;
+}

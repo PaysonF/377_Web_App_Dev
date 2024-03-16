@@ -1,0 +1,31 @@
+Main Idea: Short videogame about night being forever.
+Artstyle: completly black and white, with shades of gray
+
+e.preventDefault(); <-- Code which prevents scroll wheel
+
+CURRENT GOALS AND STUFF ( In no particular order ) # of question marks = how uncertain
+--------------
+1. Make person move with not that much code --> Make smoother next
+2. Figure out animation to go from room to room --> Make it --> Incorpate it
+2. Ideas: Blacksweep from side entering from, when covers entire screen: change out scene / Or some manner using moonlight
+3. Enchance Main Menu & get a start button to work
+3. A: Include moon or moonlight rays that are animated, when over title make easier to be seen (make it so rays are "lower" than the text, should work)
+4. Death Animation
+5. Design Rooms, (Starter, Hallway, Etc)
+6. Puzzle Ideas
+7. Boss Fight???
+8. Color Change mechanics?
+9. Animate anything else significant and not mentioned
+10. Come up with ideas on how to block / mitigate the moonlight
+10. Ideas: Curtains/Shades, Opaque objects, Lantern
+11. Come up with an ending, story in general
+12. Figure out way to show controls to player / Option Menu & show other mechanics off
+12. Ideas: Clear (Control Menu is acessed early on, clear instructions) 
+Semi-Clear (Controls are learned in tandem with a puzzle, showing buttons)
+Hidden (No controls are showed at all, player learns on their own)
+13. Difficulty (Changes the controls introduction, ease of death, timed challanges??) Easy, Medium, Hard
+14. Music (Using Tonejs)
+15 Lantern (Can hold off monsters, and moonlight) Limited in some way (15,10)
+16. Monsters? (Method of defeat: Lantern) Make movement smoother to easier deal with them
+17. Pixelate player if possible
+18. Add textures (keep simple)
