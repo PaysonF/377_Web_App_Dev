@@ -3,8 +3,16 @@ var px = 300;
 var py = 435;      //document.getElementById("player").getAttribute('cy'); figure out whats wrong with this  
 var movespeed = 5;
 
-//$("#player").attr('cx')
+$(document).ready(function() {
+    $('#hallway').hide();
+});
 
+function start(){
+    $("#titlescreen").fadeOut("slow");
+    $("#hallway").fadeIn(3000);
+}
+
+//$("#player").attr('cx')
 function checkey(e){
     //if (start == true && midfire == false){ make this check if player is not aganist wall, and not in cutscene or anything else
         //Horizontal Movement
@@ -15,7 +23,8 @@ function checkey(e){
         } else if(e.key == "Space"){ //Interact
             interact(px, py);
         }
-        $(".player").setAttribute('transform','translate(30,100)');
+        document.getElementById("player").style.transform = "translate(" + 100 + ")"; 
+        console.log(px)
         // $(".player").attr('cx', px);
         // $(".player").attr('cy', py);
         //} 

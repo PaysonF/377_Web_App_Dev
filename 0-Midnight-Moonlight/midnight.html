@@ -14,19 +14,23 @@
                   <stop offset="100%" stop-color="white" />
                 </linearGradient>
               </defs>
-            <!--"Moon"-->
-            <polygon points="150,15 258,77 258,202 150,265 42,202 42,77" />
+            <g id="titlescreen">
+                <polygon points="150,15 258,77 258,202 150,265 42,202 42,77" onclick="start()"/><!--"Moon"-->
             <!--Title-->
-            <text x="280" y="170" fill="url(#grad1)" font-size="80">Midnight</text>
-            <text x="250" y="270" fill="url(#grad1)" font-size="80">Moonlight</text>
-            <!--Hallway, After main room-->
-            <g>
-                <rect fill="black" stroke="white" stroke-width="5" width="1100" height="60" x="-10" y="338"></rect> <!--Hallway itself-->
-                <rect fill="white" stroke="gray" stroke-width="5" width="50" height="70" x="50%" y="230">/>
+                <text x="280" y="170" fill="url(#grad1)" font-size="80">Midnight</text>
+                <text x="250" y="270" fill="url(#grad1)" font-size="80">Moonlight</text>
+         
+            </g>
+            
+            <g id="hallway"> <!--Hallway, After main room-->
+                <rect fill="black" stroke="white" stroke-width="5" width="1100" height="60" x="-10" y="338"></rect> <!--Hallway itself (middle and bottom line)-->
+                <line x1="0" x2="100%" y1="190" y2="190" stroke="white" stroke-width="5"></line>
+                <rect fill="white" stroke="gray" stroke-width="5" width="50" height="70" x="50%" y="215">/> <!--Window-->
+
             </g>
             <!--Character-->
             <g id="player">
-                <circle class="player" cx="300" cy="240" r="15" fill="white" stroke="black" stroke-width="5"></circle> <!--Head-->
+                <circle cx="300" cy="240" r="15" fill="white" stroke="black" stroke-width="5"></circle> <!--Head-->
                 <rect fill="white" width="20" height="75" x="291" y="257" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
                 <rect fill="white" width="20" height="50" x="312" y="340" rx="5" ry="5"></rect> <!--LegFront-->
                 <rect fill="white" width="20" height="50" x="270" y="340" rx="5" ry="5"></rect> <!--LegBack-->
@@ -35,7 +39,6 @@
             </g>
             <!--Moonlight Spot, make varients later on!-->
             <rect class="moonlit" fill="white" width="50" height="55" x="50%" y="69%">/>
-            
         </svg>
     </body>
 </html>

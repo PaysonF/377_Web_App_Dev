@@ -11,3 +11,7 @@ polygon {
 .moonlit {
     opacity: 0.5;
 }
+
+#player {
+    transform: translate(20px, 20px)
+}
