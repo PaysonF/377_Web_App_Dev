@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<title>Midnight Moonlight: Hotel</title>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="midnight.js"></script>
+    <link rel="stylesheet" href="midnight.css">
+</head>
+    <body>
+        <svg id="Hotel" viewBox="0 0 1000 500">
+            <g id="starteroom">
+                <polygon points="300,100 300,200 200,200 200,300 300,300 600,300 600,100"></polygon> <!--Polygon Makes up Outer Parts, Other Parts make up the rest-->
+                <rect fill="white" stroke="gray" stroke-width="5" width="50" height="70" x="50%" y="215">/> <!--Window-->
+            </g>
+            <g id="f3Hallway"> <!--Hallway, After main room-->
+                <polygon points="50,150 150,150 150,125 250,125 250,150 450,150 450,175 550,175 550,150 950,150 950,350 50,350"></polygon>
+            </g>
+
+            <!--Character, try to link from a different file alongside srcs-->
+            <g id="player" visibility="hidden">
+                <circle cx="300" cy="240" r="15" fill="white" stroke="black" stroke-width="5"></circle> <!--Head-->
+                <rect fill="white" width="20" height="75" x="291" y="257" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
+                <rect fill="white" width="20" height="50" x="312" y="340" rx="5" ry="5"></rect> <!--LegFront-->
+                <rect fill="white" width="20" height="50" x="270" y="340" rx="5" ry="5"></rect> <!--LegBack-->
+                <rect fill="white" width="20" height="65" x="312" y="260" rx="5" ry="5"></rect> <!--ArmFront-->
+                <rect fill="white" width="20" height="65" x="270" y="260" rx="5" ry="5"></rect> <!--ArmBack-->
+            </g>
+            <!--Moonlight Spot, make varients later on!-->
+            <rect class="moonlit" fill="white" width="50" height="55" x="50%" y="69%">/>
+
+
+
+                            <!--Button to Move into other rooms for testing stuff
+            <g id="test" onclick="">
+                <rect fill="blue" stroke="green"  stroke-width="5" width="100" height="100" x="850" y="10"></rect>
+                <text x="868" y="73" fill="white" font-size="40">Test</text>
+            </g>
+-->
+        </svg>
+    </body>
+</html>

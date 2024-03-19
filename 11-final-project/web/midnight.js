@@ -4,24 +4,30 @@ var py = 435;      //document.getElementById("player").getAttribute('cy'); figur
 var movespeed = 5;
 
 $(document).ready(function() {
-    $('#hallway').hide();
+    //Code here runs upon page open
+    $("#starteroom").fadeOut(100);
 });
 
 function start(){
-    $("#titlescreen").fadeOut("slow");
-    $("#hallway").fadeIn(3000);
+    $("#player").fadeIn(3100);
+    //test rooms here
+    $("#F3Hallway").fadeIn(3000);
 }
 
 //$("#player").attr('cx')
 function checkey(e){
     //if (start == true && midfire == false){ make this check if player is not aganist wall, and not in cutscene or anything else
         //Horizontal Movement
+        
         if (e.key == "ArrowRight" || e.key == "d"){ //Right
             px += movespeed;
         } else if(e.key == "ArrowLeft" || e.key == "a"){ //Left
             px -= movespeed;
-        } else if(e.key == "Space"){ //Interact
-            interact(px, py);
+        } else if(e.key == " "){ //Interact
+            start();
+            console.log("test");
+            
+            //interact(px, py); in future
         }
         document.getElementById("player").style.transform = "translate(" + 100 + ")"; 
         console.log(px)
@@ -33,5 +39,5 @@ function interact(x, y){
     print("Interaction");
     //Figure out way to check when near
 }
-    
+
     
