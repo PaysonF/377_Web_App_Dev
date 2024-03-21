@@ -2,6 +2,7 @@ document.onkeydown = checkey;
 var px = 300;
 var py = 435;      //document.getElementById("player").getAttribute('cy'); figure out whats wrong with this  
 var movespeed = 5;
+var checklist = ["hello"];
 
 $(document).ready(function() {
     //Code here runs upon page open
@@ -27,20 +28,24 @@ function checkey(e){
             px -= movespeed;
         } else if(e.key == " "){ //Interact
             start();
-            console.log("test");
+            console.log("Space Pressed");
             
-            //interact(px, py); in future
+            interact(px, py);
         }
-        console.log("player x: " + $("#player").attr("x"))
-        $("#player").attr("x", px); 
-        console.log(px)
-        // $(".player").attr('cx', px);
+        console.log("player x: " + $("#player").attr("x"));
+        // $("#player").attr("x", px); 
+        //$("#player").attr("transform", "translate(" + px + ",0)");
+        console.log(px);
+        $("#player").attr('cx', px);
         // $(".player").attr('cy', py);
         //} 
 }
 function interact(x, y){
-    print("Interaction");
+    log("Interaction");
     //Figure out way to check when near
+    if ("hello" in checklist){
+        log("CheckList: Hello")
+    }
 }
 
     
