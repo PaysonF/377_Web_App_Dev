@@ -6,7 +6,7 @@
 </head>
     <body> 
         <svg id="Title" viewBox="0 0 1000 500">
-            <defs>
+            <defs >
                 <linearGradient id="darker" x1="0%" x2="100%" y1="0%" y2="0%">
                   <stop offset="0%" stop-color="dimgray" />
                   <stop offset="100%" stop-color="white" />
@@ -14,15 +14,23 @@
                 <linearGradient id="lighter" x1="0%" x2="100%" y1="0%" y2="0%">
                     <stop offset="0%" stop-color="white" />
                     <stop offset="100%" stop-color="dimgray" />
-                  </linearGradient>
+                </linearGradient>
+                <linearGradient id="ray" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="dimgray" />
+                    <stop offset="99%" stop-color="black" />
+                </linearGradient>
+
               </defs>
-            <a href="hotel.html"> <polygon points="150,15 258,77 258,202 150,265 42,202 42,77" /> </a>
+            <!--Currently Start Button, Rework to work with current title screen-->
+            <a href="hotel.html"> <polygon id="moon" points="150,15 258,77 258,202 150,265 42,202 42,77" /> </a>
+            <!--Rays ( Heavy work in progress, make moonrays go across screen and invert text color )-->
+            
+            <polygon id="titlemoonray" points="700,0 900,0 200,500 50,500"></polygon>
+            <!--Title Stuff-->
             <text x="280" y="170" fill="url(#darker)" font-size="80">Midnight</text>
             <text x="250" y="270" fill="url(#lighter)" font-size="80" >Moonlight</text>
-            <!--Rays ( Heavy work in progress, make moonrays go across screen and invert text color )-->
-            <!--Make ray go in back, also change styling in css needs to be white-->
-            <polygon points="700,0 900,0 200,500 50,500" fill="white"></polygon>
-            <rect fill="white" stroke="white" stroke-width="0" width="50" height="100%" x="76%" y="0">/>
+            
+            
         </svg>
     </body>
 </html>

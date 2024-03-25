@@ -2,11 +2,17 @@ body {
     background-color: black;
 }
 
-polygon {
+#moon {
     fill: black;
     stroke: white;
     stroke-width: 11;
 }
+
+
+#titlemoonray {
+    fill: url(#ray);
+}
+
 
 .moonlit {
     opacity: 0.5;
