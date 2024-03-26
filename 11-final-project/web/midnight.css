@@ -8,13 +8,32 @@ body {
     stroke-width: 11;
 }
 
-
-#titlemoonray {
+.rays {
     fill: url(#ray);
+    transform-origin:1100px -100px;
+    animation-name: spin;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
 }
-
 
 .moonlit {
     opacity: 0.5;
 }
 
+@keyframes spin {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(180deg);}
+  }
+
+  div {
+    width: 130px;
+    height: 100px;
+    background-color: red;
+    animation-name: spin;
+    animation-duration: 4s;
+  }
+  
+  @keyframes example {
+    100% {transform: rotate(360deg);}
+  }
+  
