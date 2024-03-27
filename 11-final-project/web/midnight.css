@@ -10,10 +10,27 @@ body {
 
 .rays {
     fill: url(#ray);
-    transform-origin:1100px -100px;
+    transform-origin:800px -100px;
     animation-name: spin;
-    animation-duration: 30s;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#rayA {
+  animation-duration: 5s;
+  transform: rotate(45deg);
+}
+#rayB {
+  animation-duration: 7s;
+  transform: rotate(45deg);
+}
+#rayC {
+  animation-duration: 6s;
+  transform: rotate(45deg);
+}
+#rayD {
+  animation-duration: 8s;
+  transform: rotate(45deg);
 }
 
 .moonlit {
@@ -21,8 +38,12 @@ body {
 }
 
 @keyframes spin {
-    0%   {transform: rotate(0deg);}
-    100% {transform: rotate(180deg);}
+    0%   {opacity: 1;}
+    100% {opacity: 0.2;}
+  }
+@keyframes spinner {
+  0%   {transform: rotate(0deg);}
+  100% {transform: rotate(180deg);}
   }
 
   div {
@@ -31,6 +52,8 @@ body {
     background-color: red;
     animation-name: spin;
     animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
   
   @keyframes example {

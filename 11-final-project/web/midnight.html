@@ -3,6 +3,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="midnight.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="midnight.js"></script>
 </head>
     <body> 
         <svg id="Title" viewBox="0 0 1000 500">
@@ -24,19 +26,31 @@
            
             <!--Rays ( Heavy work in progress, make moonrays go across screen and invert text color )-->
             <g>
-                <rect class="rays" x="1100" y="-100" width="100" height="1100" fill="url(#ray)" transform-origin="1100px -100px" transform="rotate(80)" ></rect>
-                <rect class="rays" x="800" y="-100" width="66" height="1100" fill="url(#ray)" transform-origin="800px -100px"></rect>
+                <rect class="rays" id="rayA" x="980" y="-200" width="90" height="1100"></rect>
+                <rect class="rays" id="rayB" x="800" y="-200" width="33" height="1100"></rect>
+                <rect class="rays" id="rayC" x="650" y="-200" width="75" height="1100"></rect>
+                <rect class="rays" id="rayD" x="450" y="-200" width="75" height="1100"></rect>
             </g>
             
             <!--Currently Start Button, Rework to work with current title screen-->
-            <a href="hotel.html"> <polygon id="moon" points="150,15 258,77 258,202 150,265 42,202 42,77" /> </a>
+            <a href="hotel.html"> <polygon id="moon" visibility="hidden" points="150,15 258,77 258,202 150,265 42,202 42,77" /> </a>
 
             <!--Title Stuff-->
             <text x="280" y="170" fill="url(#darker)" font-size="100">Midnight</text>
             <text x="250" y="270" fill="url(#lighter)" font-size="100" >Moonlight</text>
             
+            <!--Buttons--> 
+
+            <!--Make sure to make text unhighlightable, delete this note afterwards-->
+
+            <rect x="175" y="300" width="150" height="50" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+            <text x="180" y="340" fill="url(#lighter)" font-size="40" >Start</text>
             
+            <rect x="375" y="300" width="150" height="50" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+            <text x="380" y="340" fill="url(#lighter)" font-size="40" >Load</text>
+            
+            <rect x="575" y="300" width="150" height="50" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>      
+            <text x="580" y="340" fill="url(#lighter)" font-size="40" >Options</text>
         </svg>
-        <div></div>
     </body>
 </html>
