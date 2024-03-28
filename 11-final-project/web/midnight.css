@@ -45,18 +45,19 @@ body {
   0%   {transform: rotate(0deg);}
   100% {transform: rotate(180deg);}
   }
-
-  div {
-    width: 130px;
-    height: 100px;
-    background-color: red;
-    animation-name: spin;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
   
-  @keyframes example {
-    100% {transform: rotate(360deg);}
-  }
-  
+#startText{
+  fill: url(#lighter);
+}
+#startBox{
+  opacity:0.5
+}
+#startBox:hover {
+  fill:rgb(72, 66, 66);
+}
+#loadBox{
+  opacity:0.5
+}
+#optionsBox{
+  opacity:0.5
+}

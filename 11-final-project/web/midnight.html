@@ -33,7 +33,7 @@
             </g>
             
             <!--Currently Start Button, Rework to work with current title screen-->
-            <a href="hotel.html"> <polygon id="moon" visibility="hidden" points="150,15 258,77 258,202 150,265 42,202 42,77" /> </a>
+             <polygon id="moon" visibility="hidden" points="150,15 258,77 258,202 150,265 42,202 42,77" /> 
 
             <!--Title Stuff-->
             <text x="280" y="170" fill="url(#darker)" font-size="100">Midnight</text>
@@ -41,16 +41,16 @@
             
             <!--Buttons--> 
 
-            <!--Make sure to make text unhighlightable, delete this note afterwards-->
+            <a href="hotel.html">
+            <text id="startText" x="75" y="380" fill="url(#lighter)" font-size="75" >Start</text>
+            <rect id="startBox" x="75" y="300" width="250" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+            </a>
 
-            <rect x="175" y="300" width="150" height="50" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
-            <text x="180" y="340" fill="url(#lighter)" font-size="40" >Start</text>
+            <text id="loadText" x="380" y="380" fill="url(#lighter)" font-size="75" >Load</text>
+            <rect id="loadBox" x="375" y="300" width="250" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
             
-            <rect x="375" y="300" width="150" height="50" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
-            <text x="380" y="340" fill="url(#lighter)" font-size="40" >Load</text>
-            
-            <rect x="575" y="300" width="150" height="50" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>      
-            <text x="580" y="340" fill="url(#lighter)" font-size="40" >Options</text>
+            <text id="optionsText" x="682" y="375" fill="url(#lighter)" font-size="75" >Options</text>
+            <rect id="optionsBox" x="675" y="300" width="250" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>      
         </svg>
     </body>
 </html>
