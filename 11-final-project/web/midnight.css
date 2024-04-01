@@ -45,19 +45,29 @@ body {
   0%   {transform: rotate(0deg);}
   100% {transform: rotate(180deg);}
   }
-  
-#startText{
+
+@keyframes expand {
+  0%   {transform: rotate(0deg);}
+  100% {transform: rotate(180deg);}
+} 
+.MenuText{
   fill: url(#lighter);
 }
 #startBox{
-  opacity:0.5
+  opacity:0.5;
 }
 #startBox:hover {
   fill:rgb(72, 66, 66);
 }
 #loadBox{
-  opacity:0.5
+  opacity:0.5;
+}
+#loadBox:hover {
+  fill:rgb(72, 66, 66);
 }
 #optionsBox{
-  opacity:0.5
+  opacity:0.5;
+}
+#optionsBox:hover {
+  fill:rgb(72, 66, 66);
 }

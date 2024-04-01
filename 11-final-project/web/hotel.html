@@ -8,26 +8,26 @@
 </head>
     <body>
         <svg id="Hotel" viewBox="0 0 1000 500">
-            <g id="starteroom" visibility="hidden">
-                <polygon points="300,100 300,200 200,200 200,300 300,300 600,300 600,100"></polygon> <!--Polygon Makes up Outer Parts, Other Parts make up the rest-->
+            <g id="starteroom">
+                <polygon points="300,100 300,200 200,200 200,300 300,300 600,300 600,100" stroke="white" stroke-width="5"></polygon> <!--Polygon Makes up Outer Parts, Other Parts make up the rest-->
                 <rect fill="white" stroke="gray" stroke-width="5" width="50" height="70" x="50%" y="215">/> <!--Window-->
             </g>
             <g id="f3Hallway" visibility="hidden"> <!--Hallway, After main room-->
                 <polygon points="50,150 150,150 150,125 250,125 250,150 450,150 450,175 550,175 550,150 950,150 950,350 50,350"></polygon>
             </g>
-            <g id="Elevator">
+            <g id="Elevator" visibility="hidden">
                 <polygon points="300,150 400,150 400,100 475,100 475,150 525,150 525,100 600,100 600,150 700,150, 700,400, 300,400"></polygon>
             </g>
             
 
-            <!--Character, try to link from a different file alongside srcs-->
+            <!--Character, try to link from a different file alongside srcs and organize it so everything is in right place-->
             <g id="player">
-                <circle cx="300" cy="240" r="15" fill="white" stroke="black" stroke-width="5"></circle> <!--Head-->
-                <rect fill="white" width="20" height="75" x="291" y="257" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
-                <rect fill="white" width="20" height="50" x="312" y="340" rx="5" ry="5"></rect> <!--LegFront-->
-                <rect fill="white" width="20" height="50" x="270" y="340" rx="5" ry="5"></rect> <!--LegBack-->
-                <rect fill="white" width="20" height="65" x="312" y="260" rx="5" ry="5"></rect> <!--ArmFront-->
-                <rect fill="white" width="20" height="65" x="270" y="260" rx="5" ry="5"></rect> <!--ArmBack-->
+                <circle cx="296" cy="245" r="13" fill="white" stroke="black" stroke-width="5"></circle> <!--Head-->
+                <rect fill="white" width="10" height="25" x="291" y="257" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
+                <rect fill="gray" width="10" height="20" x="291" y="285" rx="5" ry="5"></rect> <!--LegFront-->
+                <rect fill="gray" width="10" height="20" x="291" y="285" rx="5" ry="5"></rect> <!--LegBack-->
+                <rect fill="gray" width="10" height="20" x="291" y="260" rx="5" ry="5"></rect> <!--ArmFront-->
+                <rect fill="gray" width="10" height="20" x="291" y="260" rx="5" ry="5"></rect> <!--ArmBack-->
             </g>
             <!--Moonlight Spot, make varients later on!-->
             <rect class="moonlit" fill="white" width="50" height="55" x="50%" y="69%">/>

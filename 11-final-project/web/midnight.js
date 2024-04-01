@@ -8,14 +8,11 @@ var movelimitList = [];
 var transportList = ["Plhold"];
 
 $(document).ready(function() {
-    //Code here runs upon page open
-    //$("#f3Hallway").fadeOut(100);
-    $("#starteroom").fadeOut(100);
+    $("#player").fadeIn(100);
 });
 
 function start(){
-    $("#player").fadeIn(3100);
-    //test rooms here
+    
 }
 
 //$("#player").attr('cx')
@@ -34,10 +31,10 @@ function checkey(e){
         } else if(e.key == "ArrowDown" || e.key == "s"){ //Left
             py += movespeed;
         } else if(e.key == ' '){ //Interact
-            start();
-            console.log("Space Pressed");        
+            console.log("Space Pressed");    
             interact(px, py);
         }
+        limit_move(px, py);
         console.log("player x: " + $("#player").attr("cx"));
         // $("#player").attr("x", px); 
         $("#player").attr("transform", "translate(" + px + "," + py + ")");
@@ -45,8 +42,13 @@ function checkey(e){
         // $(".player").attr('cy', py);
         //} 
 }
-function limit_move(){
-    
+//handle all three
+function limit_move(a, b){
+    var temp = toString(a)
+    console.log("temp is: " + temp)
+    if (temp in interactList || temp in movelimitList){
+        console.log("Dont Move")
+    }
 }
 
 function interact(x, y){
