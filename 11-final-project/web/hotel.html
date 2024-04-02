@@ -19,15 +19,15 @@
                 <polygon points="300,150 400,150 400,100 475,100 475,150 525,150 525,100 600,100 600,150 700,150, 700,400, 300,400"></polygon>
             </g>
             
-
             <!--Character, try to link from a different file alongside srcs and organize it so everything is in right place-->
+            <!--Left To Right State-->
             <g id="player">
                 <circle cx="296" cy="245" r="13" fill="white" stroke="black" stroke-width="5"></circle> <!--Head-->
-                <rect fill="white" width="10" height="25" x="291" y="257" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
-                <rect fill="gray" width="10" height="20" x="291" y="285" rx="5" ry="5"></rect> <!--LegFront-->
-                <rect fill="gray" width="10" height="20" x="291" y="285" rx="5" ry="5"></rect> <!--LegBack-->
-                <rect fill="gray" width="10" height="20" x="291" y="260" rx="5" ry="5"></rect> <!--ArmFront-->
-                <rect fill="gray" width="10" height="20" x="291" y="260" rx="5" ry="5"></rect> <!--ArmBack-->
+                <rect id="backArm" class="arm" fill="gray" width="10" height="20" x="291" y="260" rx="5" ry="5"></rect> <!--ArmBack-->
+                <rect id="body" fill="white" width="10" height="25" x="291" y="257" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
+                <rect id="backLeg" class="leg" fill="white" width="10" height="20" x="291" y="285" rx="5" ry="5"></rect> <!--LegBack-->
+                <rect id="frontLeg" class="leg" fill="white" width="10" height="20" x="291" y="285" rx="5" ry="5"></rect> <!--LegFront-->
+                <rect id="frontArm" class="arm" fill="gray" width="10" height="20" x="291" y="260" rx="5" ry="5"></rect> <!--ArmFront-->
             </g>
             <!--Moonlight Spot, make varients later on!-->
             <rect class="moonlit" fill="white" width="50" height="55" x="50%" y="69%">/>
