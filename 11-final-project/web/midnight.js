@@ -1,11 +1,17 @@
 document.onkeydown = checkey;
 var px = 0;
 var py = 0;      //document.getElementById("player").getAttribute('cy'); figure out whats wrong with this  
-var movespeed = 5;
+var movespeed = 10;
 // All variables below use x,y list for various things, interactList dictates areas where the player should be able to use stuff, movelimit list prevents the player from moving when they are at the edge of a room, lastly transport list is where the "doors are" mabye make into part of the interact list but seperate
 var interactList = [50, "Placeholder"];
 var movelimitList = [];
 var transportList = ["Plhold"];
+
+var minX = 0;
+var maxX = 0;
+var minY = -10;
+var maxY = 50;
+
 
 $(document).ready(function() {
     $("#player").fadeIn(100);
@@ -33,35 +39,40 @@ function checkey(e){
         
         //Make movement smoother eventually, get rid of stutter at begening
         // checks for what state character should be in
-        if (e.key == "ArrowRight" || e.key == "d" || e.key == "ArrowLeft" || e.key == "a"){
+
+    if (e.key == "ArrowRight" || e.key == "d" || e.key == "ArrowLeft" || e.key == "a"){
             //Facing Horizontaly
             characterChange("Horizontal");
-        } else if (e.key == "ArrowUp" || e.key == "w" || e.key == "ArrowDown" || e.key == "s"){
+    } else if (e.key == "ArrowUp" || e.key == "w" || e.key == "ArrowDown" || e.key == "s"){
             //Facing Verticaly
             characterChange("Vertical");
-        }
-
-        if (e.key == "ArrowRight" || e.key == "d"){ //Right
-            px += movespeed;
-        } else if(e.key == "ArrowLeft" || e.key == "a"){ //Left
-            px -= movespeed;
-        } else if(e.key == "ArrowUp" || e.key == "w"){ //Left
-            py -= movespeed;
-        } else if(e.key == "ArrowDown" || e.key == "s"){ //Left
-            py += movespeed;
-        } 
+    }
         
-        else if(e.key == ' '){ //Interact
-            console.log("Space Pressed");    
-            interact(px, py);
-        }
-        limit_move(px, py);
-        console.log("player x: " + $("#player").attr("cx"));
-        // $("#player").attr("x", px); 
+    if (e.key == "ArrowRight" || e.key == "d"){ //Right
+        px += movespeed;
+    } else if(e.key == "ArrowLeft" || e.key == "a"){ //Left
+        px -= movespeed;
+    } else if(e.key == "ArrowUp" || e.key == "w"){ //Left
+        py -= movespeed;
+    } else if(e.key == "ArrowDown" || e.key == "s"){ //Left
+        py += movespeed;
+    } 
+        
+    else if(e.key == ' '){ //Interact
+        console.log("Space Pressed");    
+        interact(px, py);
+    }
+    limit_move(px, py);
+    console.log("player y: " + py + ", MinY is:" + minY);
+    //Spoused to make movement stutter (only moves in half sec intervals) does not work
+    //Make rooms simple, 4 sides, 4 min/max variables - prevent movement if near 
+    // make interaction / transportation points work though - check before preventing movement - and variable check
+
+    if (py != minY || py != maxY){
         $("#player").attr("transform", "translate(" + px + "," + py + ")");
-        console.log(px);
-        // $(".player").attr('cy', py);
-        //} 
+    }
+    // $(".player").attr('cy', py);
+    //} 
 }
 //handle all three
 function limit_move(x, y){
@@ -71,7 +82,7 @@ function limit_move(x, y){
         console.log("Dont Move")
     }
 }
-
+  
 function interact(x, y){
     console.log(checklist);
     if ("hello" in checklist){
