@@ -8,30 +8,30 @@
 </head>
     <body>
         <svg id="Hotel" viewBox="0 0 1000 500">
-            <g id="starteroom" visibility="hidden">
-                <polygon points="300,100 300,200 200,200 200,300 300,300 600,300 600,100" stroke="white" stroke-width="5"></polygon> <!--Polygon Makes up Outer Parts, Other Parts make up the rest-->
-                <rect fill="white" stroke="gray" stroke-width="5" width="50" height="70" x="50%" y="215">/> <!--Window-->
+            <!-- Polygon - Representing all rooms -->
+            <polygon id="Rooms" stroke="white" stroke-width="5"></polygon>
+        
+            <g id="Bed" visibility="visible">
+                <rect class="d" fill="black" stroke-width="5" stroke="white" width="50" height="30" x="320" y="110" rx="5" ry="5"></rect>
+                <rect class="d" fill="black" stroke-width="5" stroke="white" width="50" height="75" x="320" y="130"></rect>
+                <rect class="d" fill="black" stroke-width="5" stroke="white" width="50" height="25" x="320" y="180"></rect>
+                <rect class="d" fill="black" stroke-width="3" stroke="white" width="20" height="1" x="335" y="190"></rect>
             </g>
-            <g id="f3Hallway" visibility="visible"> <!--Hallway, After main room-->
-                <polygon points="50,175 150,175 150,150 200,150 200,175 550,175 950,175 950,300 50,300" stroke="white" stroke-width="5"></polygon>
-            </g>
-            <g id="Elevator" visibility="hidden">
-                <polygon points="300,150 400,150 400,100 475,100 475,150 525,150 525,100 600,100 600,150 700,150, 700,400, 300,400"></polygon>
-            </g>
+                
             
+                <polygon id="Lantern" points = "500,400 510,385 520,400 520,425 508,425 508,412 512,412 512,425 500,425" stroke="white" stroke-width="1.25"></polygon>
             <!--Character, try to link from a different file alongside srcs and organize it so everything is in right place-->
             <!--Left To Right State-->
             <g id="player">
-                <circle cx="296" cy="245" r="13" fill="white" stroke="black" stroke-width="5"></circle> <!--Head-->
-                <rect id="backArm" class="arm" fill="gray" width="10" height="20" x="291" y="260" rx="5" ry="5"></rect> <!--ArmBack-->
-                <rect id="body" fill="white" width="10" height="25" x="291" y="257" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
-                <rect id="backLeg" class="leg" fill="white" width="10" height="20" x="291" y="285" rx="5" ry="5"></rect> <!--LegBack-->
-                <rect id="frontLeg" class="leg" fill="white" width="10" height="20" x="291" y="285" rx="5" ry="5"></rect> <!--LegFront-->
-                <rect id="frontArm" class="arm" fill="gray" width="10" height="20" x="291" y="260" rx="5" ry="5"></rect> <!--ArmFront-->
+                <circle id ="head" cx="505" cy="247" r="10" fill="white"></circle> <!--Head-->
+                <rect id="backArm" class="arm" fill="gray" width="10" height="20" x="500" y="260" rx="5" ry="5"></rect> <!--ArmBack-->
+                <rect id="body" fill="white" width="10" height="25" x="500" y="257" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
+                <rect id="backLeg" class="leg" fill="white" width="10" height="20" x="500" y="285" rx="5" ry="5"></rect> <!--LegBack-->
+                <rect id="frontLeg" class="leg" fill="white" width="10" height="20" x="500" y="285" rx="5" ry="5"></rect> <!--LegFront-->
+                <rect id="frontArm" class="arm" fill="gray" width="10" height="20" x="500" y="260" rx="5" ry="5"></rect> <!--ArmFront-->
             </g>
             <!--Moonlight Spot, make varients later on!-->
-            <rect class="moonlit" fill="white" width="50" height="55" x="50%" y="69%">/>
-
+            
 
 
                             <!--Button to Move into other rooms for testing stuff
