@@ -17,14 +17,12 @@ let elevator = [[300,150], [400,150], [400,100], [475,100], [475,150], [525,150]
 let cafe = [[50,400], [950,400], [950,100], [50,100]];
 let tube = [[400,25], [600,25], [600,475], [400,475]];
 
-$(document).ready(function() {
-    $("#player").fadeIn(100);
-    document.getElementById("Rooms").setAttribute("points", starter);
-    characterChange("Vertical");
-});
-
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function ButtonPress(){
+    $(".buttons").fadeOut(100);
 }
 
 
@@ -100,13 +98,20 @@ function roomFade(time, type){
     if (type == "Out"){
         $("#Rooms").fadeOut(time);
         $("#player").fadeOut(time);
+        $("#Bed").fadeOut(time);
     } else if (type == "In"){
         $("#Rooms").fadeIn(time);
         $("#player").fadeIn(time);
+        if (room == "starter"){
+            $("#Bed").fadeIn(1500);
+        }
     }
 }
 function roomChange(destination){
-    room = "hallway"
+    if (room == "starter"){
+        room = "hallway"  
+    } else if (room == "hallway")
+        room = "starter" 
     var delay = 1000;
     roomFade(delay, "Out");
     sleep(delay).then(() => { document.getElementById("Rooms").setAttribute("points", destination); });
