@@ -11,7 +11,7 @@
             characterChange("Vertical");
 }); 
     </script>
-    <link rel="stylesheet" href="midnight.css">
+    <link rel="stylesheet" href="midnight.css?v=<?php echo rand(); ?>">
 </head>
     <body>
         <svg id="Hotel" viewBox="0 0 1000 500">
@@ -25,18 +25,24 @@
                 <rect class="d" fill="black" stroke-width="3" stroke="white" width="20" height="1" x="335" y="190"></rect>
             </g>
                 
+            <g id="Lantern" visibility="visible">
+                <rect id="lid"></rect>
+                <rect id="glass"></rect>
+                <rect id="candle"></rect>
+                <rect id="bottom"></rect>
+            </g>
             
                 <polygon id="Lantern" points = "500,400 510,385 520,400 520,425 508,425 508,412 512,412 512,425 500,425" stroke="white" stroke-width="1.25"></polygon>
             <!--Character, try to link from a different file alongside srcs and organize it so everything is in right place-->
             <!--Left To Right State-->
             <!---->
             <g id="player">
-                <circle id ="head" cx="345" cy="125" r="10" fill="white"></circle> <!--Head-->
-                <rect id="backArm" class="arm" fill="gray" width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmBack-->
-                <rect id="body" fill="white" width="10" height="25" x="340" y="135" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
-                <rect id="backLeg" class="leg" fill="white" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegBack-->
-                <rect id="frontLeg" class="leg" fill="white" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegFront-->
-                <rect id="frontArm" class="arm" fill="gray" width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmFront-->
+                <circle id ="head" cx="345" cy="125" r="10" ></circle> <!--Head-->
+                <rect id="backArm" class="arm" width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmBack-->
+                <rect id="body" width="10" height="25" x="340" y="135" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
+                <rect id="backLeg" class="leg" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegBack-->
+                <rect id="frontLeg" class="leg" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegFront-->
+                <rect id="frontArm" class="arm"  width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmFront-->
             </g>
             <!--Moonlight Spot, make varients later on!-->
             

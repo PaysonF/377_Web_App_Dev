@@ -71,6 +71,8 @@ function checkey(e){
         } else {
             roomChange(hallway);
         }
+    } else if(e.key == "o"){
+        //go to the options menu, no need for saves menu in game
     }
     limit_move(px, py);
     //document.getElementById("Rooms").setAttribute("transform", "translate(" + px + "," + py + ")");

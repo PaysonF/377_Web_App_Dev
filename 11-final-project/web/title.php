@@ -2,7 +2,7 @@
 <title>Midnight Moonlight: Title </title>
 <html>
 <head>
-    <link rel="stylesheet" href="midnight.css">
+    <link rel="stylesheet" href="midnight.css?v=<?php echo rand(); ?>">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script defer src="midnight.js"></script>
 </head>
@@ -46,11 +46,15 @@
                 <rect id="startBox" x="50" y="300" width="250" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
                 </a>
 
+                <a href="saves.html">
                 <text class="MenuText" x="390" y="375" font-size="75" >Load</text>
                 <rect onclick="ButtonPress()" id="loadBox" x="350" y="300" width="250" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+                </a>   
             
+                <a href="options.html">
                 <text class="MenuText" x="675" y="375" font-size="75" >Options</text>
                 <rect id="optionsBox" x="650" y="300" width="290" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>      
+                </a>
             </g>
         </svg>
     </body>

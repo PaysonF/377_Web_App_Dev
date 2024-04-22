@@ -75,3 +75,9 @@ body {
 /* 
 Player Styling
 */
+
+#player {
+  fill:black;
+  stroke-width:2px;
+  stroke:white;
+}
