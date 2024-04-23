@@ -3,7 +3,7 @@
 <html>
 <head>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="midnight.js"></script>
+    <script src="midnight.js?v=<?php echo rand(); ?>"></script>
     <script>
         $(document).ready(function() {
             $("#player").fadeIn(100);
@@ -16,7 +16,7 @@
     <body>
         <svg id="Hotel" viewBox="0 0 1000 500">
             <!-- Polygon - Representing all rooms -->
-            <polygon id="Rooms" stroke="white" stroke-width="5"></polygon>
+            <polygon id="Rooms"></polygon>
         
             <g id="Bed" visibility="visible">
                 <rect class="d" fill="black" stroke-width="5" stroke="white" width="50" height="30" x="320" y="110" rx="5" ry="5"></rect>
@@ -43,6 +43,12 @@
                 <rect id="backLeg" class="leg" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegBack-->
                 <rect id="frontLeg" class="leg" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegFront-->
                 <rect id="frontArm" class="arm"  width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmFront-->
+            </g>
+
+            <g id="enemy">
+            
+        
+            
             </g>
             <!--Moonlight Spot, make varients later on!-->
             

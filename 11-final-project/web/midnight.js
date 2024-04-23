@@ -50,17 +50,27 @@ function checkey(e){
             //Facing Horizontaly
             characterChange("Horizontal");
             if (e.key == "ArrowRight" || e.key == "d"){ //Right
-                xmove += 10;
+                // if (xmove and ymove) statements are basic limiters / need to be made better
+                // current method only works with either squares or rectangles without any indents
+                if (xmove <= 245){
+                    xmove += 10; 
+                }
             } else if(e.key == "ArrowLeft" || e.key == "a"){ //Left
-                xmove -= 10;
+                if (xmove >= -135){
+                    xmove -= 10;
+                }
             }
     } else if (e.key == "ArrowUp" || e.key == "w" || e.key == "ArrowDown" || e.key == "s"){
             //Facing Verticaly
             characterChange("Vertical");
             if(e.key == "ArrowUp" || e.key == "w"){ //Left
-                ymove -= 10
+                if (ymove >= -50){
+                    ymove -= 10
+                }
             } else if(e.key == "ArrowDown" || e.key == "s"){ //Left
-                ymove += 10
+                if (ymove <= 120){
+                    ymove += 10 
+                }
             }
     }   
     else if(e.key == ' '){ //Interact
