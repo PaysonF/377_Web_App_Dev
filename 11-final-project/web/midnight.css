@@ -2,6 +2,10 @@ body {
     background-color: black;
 }
 
+line {
+  stroke:white;
+}
+
 #moon {
     fill: black;
     stroke: white;
@@ -19,6 +23,11 @@ body {
 #Rooms {
   stroke:white;
   stroke-width:5;
+}
+
+.settingtoptext {
+  fill:white;
+  font-size:45px;
 }
 
 #rayA {

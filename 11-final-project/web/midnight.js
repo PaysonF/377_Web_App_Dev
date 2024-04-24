@@ -21,8 +21,9 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function ButtonPress(){
-    $(".buttons").fadeOut(100);
+function SavesNavigation(){
+    $("#buttons").fadeOut(300);
+    $("#SavesBox").fadeIn(300);
 }
 
 

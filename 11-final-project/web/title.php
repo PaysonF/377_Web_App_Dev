@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="midnight.css?v=<?php echo rand(); ?>">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script defer src="midnight.js"></script>
+    <script defer src="midnight.js?v=<?php echo rand(); ?>"></script>
 </head>
     <body> 
         <svg id="Title" viewBox="0 0 1000 500">
@@ -38,22 +38,28 @@
             <!--Title Stuff-->
             <text x="280" y="170" fill="url(#darker)" font-size="100">Midnight</text>
             <text x="250" y="270" fill="url(#lighter)" font-size="100" >Moonlight</text>
-            
+            <!-- Saves -->
+            <g id="SavesBox">
+                <rect x="50" y="300" rx="5" ry="5" width="890" height="100" stroke="white" stroke-width="5" opacity="0"></rect>
+            </g>
+
             <!--Buttons--> 
-            <g id="buttons" onclick="ButtonPress()">
+            <g id="buttons">
                 <a href="hotel.php">
                 <text class="MenuText" x="100" y="375" font-size="75" >Start</text>
                 <rect id="startBox" x="50" y="300" width="250" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
                 </a>
 
                 <text class="MenuText" x="390" y="375" font-size="75" >Load</text>
-                <rect onclick="ButtonPress()" id="loadBox" x="350" y="300" width="250" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+                <rect onclick="SavesNavigation()" id="loadBox" x="350" y="300" width="250" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
                 
                 <a href="options.php">
                 <text class="MenuText" x="675" y="375" font-size="75" >Options</text>
                 <rect id="optionsBox" x="650" y="300" width="290" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>      
                 </a>
             </g>
+            <!-- Saves Box -->
+            
         </svg>
     </body>
 </html>
