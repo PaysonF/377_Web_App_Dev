@@ -1,6 +1,6 @@
 document.onkeydown = checkey;
-let px = 345;
-let py = 125;
+let px = 0;
+let py = 0;
 let move = 0; 
 let xmove = move;
 let ymove= move;
@@ -23,7 +23,7 @@ function sleep(ms) {
 
 function SavesNavigation(){
     $("#buttons").fadeOut(300);
-    $("#SavesBox").fadeIn(300);
+    $("#SavesBox").attr("opacity", "1");
 }
 
 
@@ -111,12 +111,12 @@ function roomFade(time, type){
     if (type == "Out"){
         $("#Rooms").fadeOut(time);
         $("#player").fadeOut(time);
-        $("#Bed").fadeOut(time);
+        $(".Objects").fadeOut(time);
     } else if (type == "In"){
         $("#Rooms").fadeIn(time);
         $("#player").fadeIn(time);
         if (room == "starter"){
-            $("#Bed").fadeIn(1500);
+            $(".Objects").fadeIn(1500);
         }
     }
 }

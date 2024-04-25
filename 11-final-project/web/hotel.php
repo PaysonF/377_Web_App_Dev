@@ -17,22 +17,23 @@
         <svg id="Hotel" viewBox="0 0 1000 500">
             <!-- Polygon - Representing all rooms -->
             <polygon id="Rooms"></polygon>
-        
-            <g id="Bed" visibility="visible">
+
+            <!-- Objects -->
+            <g class="Objects">
                 <rect class="d" fill="black" stroke-width="5" stroke="white" width="50" height="30" x="320" y="110" rx="5" ry="5"></rect>
                 <rect class="d" fill="black" stroke-width="5" stroke="white" width="50" height="75" x="320" y="130"></rect>
-                <rect class="d" fill="black" stroke-width="5" stroke="white" width="50" height="25" x="320" y="180"></rect>
-                <rect class="d" fill="black" stroke-width="3" stroke="white" width="20" height="1" x="335" y="190"></rect>
+                <rect fill="black" stroke-width="5" stroke="white" width="50" height="25" x="320" y="180"></rect>
+                <rect fill="black" stroke-width="3" stroke="white" width="20" height="1" x="335" y="190"></rect>
             </g>
                 
-            <g id="Lantern" visibility="visible">
+            <g class="Objects">
                 <rect id="lid"></rect>
                 <rect id="glass"></rect>
                 <rect id="candle"></rect>
                 <rect id="bottom"></rect>
             </g>
             
-                <polygon id="Lantern" points = "500,400 510,385 520,400 520,425 508,425 508,412 512,412 512,425 500,425" stroke="white" stroke-width="1.25"></polygon>
+                <polygon class="Objects" id="Lantern" points = "500,400 510,385 520,400 520,425 508,425 508,412 512,412 512,425 500,425" stroke="white" stroke-width="1.25"></polygon>
             <!--Character, try to link from a different file alongside srcs and organize it so everything is in right place-->
             <!--Left To Right State-->
             <!---->
