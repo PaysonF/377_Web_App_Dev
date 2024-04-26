@@ -16,6 +16,6 @@
  <p>This is a paragraph.</p>
  <p>This is another paragraph.</p>
 </div>
-
+<svg viewBox="0 0 1000 500" ></svg>
 </body>
 </html>

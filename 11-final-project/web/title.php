@@ -9,6 +9,7 @@
     <body> 
         <svg id="Title" viewBox="0 0 1000 500">
             <defs >
+                <!-- LinearGradients for Text -->
                 <linearGradient id="darker" x1="0%" x2="100%" y1="0%" y2="0%">
                   <stop offset="0%" stop-color="dimgray" />
                   <stop offset="100%" stop-color="white" />
@@ -17,11 +18,11 @@
                     <stop offset="0%" stop-color="white" />
                     <stop offset="100%" stop-color="dimgray" />
                 </linearGradient>
+                <!-- LinearGradient for moonbeams -->
                 <linearGradient id="ray" x1="0" x2="0" y1="0" y2="1">
                     <stop offset="0%" stop-color="white" />
                     <stop offset="99%" stop-color="black" />
                 </linearGradient>
-
               </defs>
            
             <!-- Rays -->

@@ -11,7 +11,7 @@
 </head>
 
     <body>
-    <svg>
+    <svg viewBox="0 0 1000 500">
 
     </svg>
 
