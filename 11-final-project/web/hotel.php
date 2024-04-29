@@ -47,9 +47,7 @@
             </g>
 
             <g id="enemy">
-            
-        
-            
+                <rect id="evilBlob" width="50" height="50" x="100" y="100"></rect>
             </g>
             <!--Moonlight Spot, make varients later on!-->
             

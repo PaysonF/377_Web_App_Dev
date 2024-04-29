@@ -1,4 +1,3 @@
-
 /*
 Base Elements styling
 */
@@ -39,6 +38,7 @@ Text Stuff
 /*
 Title Screen Navigation Buttons
 */
+
 .ButtonBox{
   opacity:0.5;
 }
@@ -48,13 +48,16 @@ Title Screen Navigation Buttons
 }
 
 /* 
-Player Styling
+Player and Enemy Styling
 */
 
 #player {
   fill:black;
   stroke-width:2px;
   stroke:white;
+}
+#evilBlob {
+  fill:red;
 }
 
 /*
@@ -64,6 +67,7 @@ Animated Title Screen Rays
 .rays {
     fill: url(#ray);
     transform-origin:800px -100px;
+    transform: rotate(45deg);
     animation-name: glow;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -71,34 +75,25 @@ Animated Title Screen Rays
 
 #rayA {
   animation-duration: 5s;
-  transform: rotate(45deg);
 }
 #rayB {
   animation-duration: 7s;
-  transform: rotate(45deg);
 }
 #rayC {
   animation-duration: 6s;
-  transform: rotate(45deg);
 }
 #rayD {
   animation-duration: 8s;
-  transform: rotate(45deg);
 }
 
 /*
-Animation Stuff
+Animation Keyframes
 */
 
 @keyframes glow {
     0%   {opacity: 1;}
     100% {opacity: 0.2;}
   }
-@keyframes spinner {
-  0%   {transform: rotate(0deg);}
-  100% {transform: rotate(180deg);}
-  }
-
 @keyframes expand {
   0%   {transform: rotate(0deg);}
   100% {transform: rotate(180deg);}

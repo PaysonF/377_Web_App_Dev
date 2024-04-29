@@ -7,17 +7,31 @@ let py = 0;
 let interactList = [50, "Placeholder"];
 let movelimitList = [];
 let transportList = ["Plhold"];
-
+//Timeout for enemy until needed
+const myTimeout = setTimeout(enemy_move, 5000);
 //Arrays of points that are used by the function roomChange to change the polygon with the id of "Rooms"
 // doorways should always be fifty wide! ex. (100,0 - 150,0)
 //Room variable used to help with roomChange
-let room = "starter";
-let hallway = [[50,175], [150,175], [150,150], [200,150], [200,175], [550,175], [950,175], [950,215], [975,215], [975,260], [950,260], [950,300], [50,300]];
+
+// if statements to figure out starting room, based on what page of the website is open
+//
+const webpage = window.location.href;
+if (webpage.includes("hotel.php")) {
+    let room = "starter";
+    console.log("TRUE")
+} else if (webpage.includes("alleyways.php")){
+    let room = "outside"
+} else if (webpage.includes("streets.php")){
+    let room = "startofend"
+}
+// Hotel Rooms
 let starter = [[300,100], [300,200], [200,200], [200,300], [300,300], [600,300], [600,100]];
+let hallway = [[50,175], [150,175], [150,150], [200,150], [200,175], [550,175], [950,175], [950,215], [975,215], [975,260], [950,260], [950,300], [50,300]];
 let elevator = [[300,150], [400,150], [400,100], [475,100], [475,150], [525,150], [525,100], [600,100], [600,150], [700,150], [700,400], [300,400]];
 let cafe = [[50,400], [950,400], [950,100], [50,100]];
 let tube = [[400,25], [600,25], [600,475], [400,475]];
-
+//Alleyways Rooms
+//Streets Rooms
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -88,7 +102,7 @@ function checkey(e){
     //document.getElementById("Rooms").setAttribute("transform", "translate(" + px + "," + py + ")");
     //Code which makes the player actually move
     // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-    $("#player").attr("transform", "translate(" + px+ "," + py+ ")");
+    $("#player").attr("transform", "translate(" + px + "," + py + ")");
 
     //
     // initialy put player group at 0,0 then copy above command and use it at the start, after that
@@ -100,7 +114,17 @@ function checkey(e){
 function limit_move(x, y){
 
 }
-  
+function enemy_move(){
+    /*
+    var hostile = true
+    while (hostile == true){
+        $("#player").attr("transform", "translate(" + 100 + "," + py + ")");
+    }
+    */
+    for(var i = 0;i++;i<10){
+        console.log("COW")
+    }
+}
 function interact(x, y){
     console.log("Interaction")
 } 
