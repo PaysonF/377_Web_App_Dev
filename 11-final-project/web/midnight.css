@@ -20,6 +20,19 @@ line {
 }
 
 /*
+Objects Stuff
+*/
+
+#Bed {
+  fill:black;
+  stroke-width:3; 
+  stroke:white;
+}
+
+#Lamp {
+  fill:black
+}
+/*
 Text Stuff
 */
 

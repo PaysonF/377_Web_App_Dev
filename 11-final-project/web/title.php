@@ -38,10 +38,16 @@
             <text x="250" y="270" fill="url(#lighter)" font-size="100" >Moonlight</text>
             <!-- Saves -->
             <g id="SavesBox" opacity="0">
-                <text class="Savetxt" x="100" y="375" >Save 1</text>
+                <!-- Needs to link to last checkpoint-->
+                <rect class="ButtonBox" x="50" y="300" rx="5" ry="5" width="890" height="100" stroke="white" stroke-width="5"></rect>
+                <a href="hotel.php">               
+                    <text class="Savetxt" x="100" y="375">Save 1</text>
+                    <rect class="ButtonBox" x="50" y="300" width="300" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+                </a>
+                
                 <text class="Savetxt" x="390" y="375" >Save 2</text>
                 <text class="Savetxt" x="675" y="375" >Save 3</text>
-                <rect class="ButtonBox" x="50" y="300" rx="5" ry="5" width="890" height="100" stroke="white" stroke-width="5"></rect>
+                
             </g>
             <!--Buttons--> 
             <g id="buttons">
@@ -56,7 +62,7 @@
                 <a href="options.php">
                 <text class="MenuText" x="675" y="375" font-size="75" >Options</text>
                 <rect class="ButtonBox" x="650" y="300" width="290" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>      
-                </a>
+                </a>         
             </g>
         </svg>
     </body>

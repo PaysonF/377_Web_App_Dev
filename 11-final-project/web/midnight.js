@@ -24,6 +24,8 @@ if (webpage.includes("hotel.php")) {
 } else if (webpage.includes("streets.php")){
     let room = "startofend"
 }
+        
+
 // Hotel Rooms
 let starter = [[300,100], [300,200], [200,200], [200,300], [300,300], [600,300], [600,100]];
 let hallway = [[50,175], [150,175], [150,150], [200,150], [200,175], [550,175], [950,175], [950,215], [975,215], [975,260], [950,260], [950,300], [50,300]];
@@ -31,7 +33,10 @@ let elevator = [[300,150], [400,150], [400,100], [475,100], [475,150], [525,150]
 let cafe = [[50,400], [950,400], [950,100], [50,100]];
 let tube = [[400,25], [600,25], [600,475], [400,475]];
 //Alleyways Rooms
+let outside = [[200,100], [200,300], [300,300], [600,300], [600,100]];
 //Streets Rooms
+let startofend = [[200,100], [200,300], [300,300], [600,300], [600,100]];
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -61,7 +66,7 @@ function characterChange(current){
 function checkey(e){
     e.preventDefault();
     //if (player x not in border && player y not in border){ make this check if player is not aganist wall, and not in cutscene or anything else
-        
+    
     if (e.key == "ArrowRight" || e.key == "d" || e.key == "ArrowLeft" || e.key == "a"){
             //Facing Horizontaly
             characterChange("Horizontal");
@@ -98,7 +103,6 @@ function checkey(e){
             roomChange(hallway);
         }
     }
-    limit_move(px, py);
     //document.getElementById("Rooms").setAttribute("transform", "translate(" + px + "," + py + ")");
     //Code which makes the player actually move
     // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
@@ -111,9 +115,13 @@ function checkey(e){
     // /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 }
 //handle all three
-function limit_move(x, y){
-
+function move_checks(){
+    
 }
+function limit_move(x, y){
+    
+}
+
 function enemy_move(){
     /*
     var hostile = true

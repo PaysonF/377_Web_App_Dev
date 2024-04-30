@@ -6,7 +6,8 @@
     <script src="midnight.js?v=<?php echo rand(); ?>"></script>
     <script>
         $(document).ready(function() {
-            $("#player").fadeIn(100);
+            $("#player").fadeOut(0);
+            $("#player").fadeIn(1000);
             document.getElementById("Rooms").setAttribute("points", starter);
             characterChange("Vertical");
 }); 
@@ -19,11 +20,11 @@
             <polygon id="Rooms"></polygon>
 
             <!-- Objects -->
-            <g class="Objects">
-                <rect class="d" fill="black" stroke-width="5" stroke="white" width="50" height="30" x="320" y="110" rx="5" ry="5"></rect>
-                <rect class="d" fill="black" stroke-width="5" stroke="white" width="50" height="75" x="320" y="130"></rect>
-                <rect fill="black" stroke-width="5" stroke="white" width="50" height="25" x="320" y="180"></rect>
-                <rect fill="black" stroke-width="3" stroke="white" width="20" height="1" x="335" y="190"></rect>
+            <g class="Objects" id="Bed">
+                <rect width="50" height="30" x="320" y="110" rx="5" ry="5"></rect>
+                <rect width="50" height="75" x="320" y="130"></rect>
+                <rect width="50" height="25" x="320" y="180"></rect>
+                <rect width="20" height="1" x="335" y="190"></rect>
             </g>
                 
             <g class="Objects">
@@ -37,6 +38,8 @@
             <!--Character, try to link from a different file alongside srcs and organize it so everything is in right place-->
             <!--Left To Right State-->
             <!---->
+            <rect id="hitbox" fill="yellow" width="50" height="50" x="200" y="200"></rect>
+            
             <g id="player">
                 <circle id ="head" cx="345" cy="125" r="10" ></circle> <!--Head-->
                 <rect id="backArm" class="arm" width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmBack-->
@@ -49,6 +52,7 @@
             <g id="enemy">
                 <rect id="evilBlob" width="50" height="50" x="100" y="100"></rect>
             </g>
+            
             <!--Moonlight Spot, make varients later on!-->
             
 
