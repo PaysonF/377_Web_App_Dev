@@ -7,7 +7,7 @@ $connection = get_database_connection();
 $sql =<<<SQL
 DELETE
   FROM movies
- WHERE mov_id = $id
+  WHERE mov_id = $id
 SQL;
 
 $connection->query($sql);

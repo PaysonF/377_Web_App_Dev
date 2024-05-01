@@ -37,25 +37,25 @@
             <text x="280" y="170" fill="url(#darker)" font-size="100">Midnight</text>
             <text x="250" y="270" fill="url(#lighter)" font-size="100" >Moonlight</text>
             <!-- Saves -->
-            <g id="SavesBox" opacity="0">
+            <g id="SavesBox" visibility="hidden">
                 <!-- Needs to link to last checkpoint-->
-                <rect class="ButtonBox" x="50" y="300" rx="5" ry="5" width="890" height="100" stroke="white" stroke-width="5"></rect>
                 <a href="hotel.php">               
-                    <text class="Savetxt" x="100" y="375">Save 1</text>
-                    <rect class="ButtonBox" x="50" y="300" width="300" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+                    <text class="Savetxt" x="100" y="375">Area 1 </text>
+                    <rect class="ButtonBox" x="50" y="300" width="295" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
                 </a>
                 <a href="alleyways.php">               
-                    <text class="Savetxt" x="390" y="375" >Save 2</text>
-                    <rect class="ButtonBox" x="340" y="300" width="300" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+                    <text class="Savetxt" x="390" y="375" >Area 2</text>
+                    <rect class="ButtonBox" x="347" y="300" width="295" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
                 </a>
                 <a href="streets.php">               
-                    <text class="Savetxt" x="675" y="375" >Save 3</text>
-                    <rect class="ButtonBox" x="625" y="300" width="300" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+                    <text class="Savetxt" x="688" y="375" >Area 3</text>
+                    <rect class="ButtonBox" x="645" y="300" width="295" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
                 </a>
-                
-                
-                
-                
+                <!-- Back Button -->
+                <g id="saveBack" onclick="SavesNavigation('From')">
+                <text class="Savetxt" fill="url(#darker)" x="415" y="472" >Back</text>
+                <rect class="ButtonBox" x="270" y="404" rx="5" ry="5" width="450" height="90" stroke="white" stroke-width="5"></rect>
+                </g>   
             </g>
             <!--Buttons--> 
             <g id="buttons">
@@ -65,7 +65,7 @@
                 </a>
 
                 <text class="MenuText" x="390" y="375" font-size="75" >Load</text>
-                <rect class="ButtonBox" onclick="SavesNavigation()" x="350" y="300" width="250" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+                <rect class="ButtonBox" onclick="SavesNavigation('To')" x="350" y="300" width="250" height="100" fill="black" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
                 
                 <a href="options.php">
                 <text class="MenuText" x="675" y="375" font-size="75" >Options</text>

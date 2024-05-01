@@ -8,7 +8,7 @@
         $(document).ready(function() {
             $("#player").fadeOut(0);
             $("#player").fadeIn(1000);
-            document.getElementById("Rooms").setAttribute("points", "outside");
+            document.getElementById("Rooms").setAttribute("points", outside);
             characterChange("Vertical");
 }); 
     </script>

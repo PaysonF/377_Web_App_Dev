@@ -14,17 +14,6 @@ const myTimeout = setTimeout(enemy_move, 5000);
 //Room variable used to help with roomChange
 
 // if statements to figure out starting room, based on what page of the website is open
-//
-const webpage = window.location.href;
-if (webpage.includes("hotel.php")) {
-    let room = "starter";
-    console.log("TRUE")
-} else if (webpage.includes("alleyways.php")){
-    let room = "outside"
-} else if (webpage.includes("streets.php")){
-    let room = "startofend"
-}
-        
 
 // Hotel Rooms
 let starter = [[300,100], [300,200], [200,200], [200,300], [300,300], [600,300], [600,100]];
@@ -42,9 +31,16 @@ function sleep(ms) {
 }
 
 //Called on Save Button Press, causes save menu to appear
-function SavesNavigation(){
-    $("#buttons").fadeOut(300);
-    $("#SavesBox").attr("opacity", "1");
+function SavesNavigation(str){
+    if(str == "To"){
+        $("#buttons").fadeOut(300);
+        $("#SavesBox").attr("visibility", "visible");
+
+    } else {
+        $("#buttons").fadeIn(300);
+        $("#SavesBox").attr("visibility", "hidden");
+    }
+    
 }
 
 //Function which changes arms and legs positions acccording to the faced direction
