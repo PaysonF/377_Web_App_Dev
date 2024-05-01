@@ -44,9 +44,17 @@
                     <text class="Savetxt" x="100" y="375">Save 1</text>
                     <rect class="ButtonBox" x="50" y="300" width="300" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
                 </a>
+                <a href="alleyways.php">               
+                    <text class="Savetxt" x="390" y="375" >Save 2</text>
+                    <rect class="ButtonBox" x="340" y="300" width="300" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+                </a>
+                <a href="streets.php">               
+                    <text class="Savetxt" x="675" y="375" >Save 3</text>
+                    <rect class="ButtonBox" x="625" y="300" width="300" height="100" stroke="white" stroke-width="3" rx="5" ry="5"></rect>
+                </a>
                 
-                <text class="Savetxt" x="390" y="375" >Save 2</text>
-                <text class="Savetxt" x="675" y="375" >Save 3</text>
+                
+                
                 
             </g>
             <!--Buttons--> 

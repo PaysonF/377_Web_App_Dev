@@ -81,7 +81,7 @@ function checkey(e){
                     px-= 10;
                 }
             }
-    } else if (e.key == "ArrowUp" || e.key == "w" || e.key == "ArrowDown" || e.key == "s"){
+    }   else if (e.key == "ArrowUp" || e.key == "w" || e.key == "ArrowDown" || e.key == "s"){
             //Facing Verticaly
             characterChange("Vertical");
             if(e.key == "ArrowUp" || e.key == "w"){ //Left
@@ -93,15 +93,16 @@ function checkey(e){
                     py+= 10 
                 }
             }
-    }   
-    else if(e.key == ' '){ //Interact
-        console.log("xmove: " + px+ ",and ymove? " + py);
-        interact(px, py);
-        if (room == "hallway"){
-            roomChange(starter); 
-        } else {
-            roomChange(hallway);
-        }
+    }   else if(e.key == ' '){ //Interact
+            console.log("xmove: " + px+ ",and ymove? " + py);
+            interact(px, py);
+            if (room == "hallway"){
+                roomChange(starter); 
+            } else {
+                roomChange(hallway);
+            }
+    } else if(e.key == 'x'){
+        //Save to db Here
     }
     //document.getElementById("Rooms").setAttribute("transform", "translate(" + px + "," + py + ")");
     //Code which makes the player actually move
