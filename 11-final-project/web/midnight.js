@@ -2,13 +2,18 @@
 document.onkeydown = checkey;
 // Moving Help coords
 let px = 0;
+let ex = 0;
 let py = 0;
+let ey = 0;
+let pcenter = $("#body").attr('x');
+console.log(pcenter);
+
 // All variables below use x,y list for various things, interactList dictates areas where the player should be able to use stuff, movelimit list prevents the player from moving when they are at the edge of a room, lastly transport list is where the "doors are" mabye make into part of the interact list but seperate
 let interactList = [50, "Placeholder"];
 let movelimitList = [];
 let transportList = ["Plhold"];
 //Timeout for enemy until needed
-const myTimeout = setTimeout(enemy_move, 5000);
+const myTimeout = setTimeout(enemy_ready, 5000);
 //Arrays of points that are used by the function roomChange to change the polygon with the id of "Rooms"
 // doorways should always be fifty wide! ex. (100,0 - 150,0)
 //Room variable used to help with roomChange
@@ -119,16 +124,15 @@ function limit_move(x, y){
     
 }
 
+function enemy_ready(){
+    setInterval(enemy_move, 250)
+}
 function enemy_move(){
-    /*
-    var hostile = true
-    while (hostile == true){
-        $("#player").attr("transform", "translate(" + 100 + "," + py + ")");
+    if(ex < pcenter){
+        ex += 10;
     }
-    */
-    for(var i = 0;i++;i<10){
-        console.log("COW")
-    }
+    document.getElementById("evilBlob").setAttribute('x', ex);
+
 }
 function interact(x, y){
     console.log("Interaction")

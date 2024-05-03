@@ -1,4 +1,5 @@
 CREATE SCHEMA `midnight_moonlight` ;
+
 CREATE TABLE `midnight_moonlight`.`saves` (
   `idsaves` INT NOT NULL,
   `location` VARCHAR(20) NULL,
