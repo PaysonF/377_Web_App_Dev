@@ -1,11 +1,12 @@
 // Current move method called when key is pressed
 document.onkeydown = checkey;
 // Moving Help coords
-let px = 0;
-let ex = 0;
-let py = 0;
+
+let px = 340;
+let ex = 100;
+let py = 150;
 let ey = 0;
-let pcenter = $("#body").attr('x');
+let pcenter = 0;
 console.log(pcenter);
 
 // All variables below use x,y list for various things, interactList dictates areas where the player should be able to use stuff, movelimit list prevents the player from moving when they are at the edge of a room, lastly transport list is where the "doors are" mabye make into part of the interact list but seperate
@@ -74,11 +75,11 @@ function checkey(e){
             if (e.key == "ArrowRight" || e.key == "d"){ //Right
                 // if (pxand ymove) statements are basic limiters / need to be made better
                 // current method only works with either squares or rectangles without any indents
-                if (px<= 245){
+                if (px <= 500){
                     px+= 10; 
                 }
             } else if(e.key == "ArrowLeft" || e.key == "a"){ //Left
-                if (px>= -135){
+                if (px >= -135){
                     px-= 10;
                 }
             }
@@ -86,11 +87,11 @@ function checkey(e){
             //Facing Verticaly
             characterChange("Vertical");
             if(e.key == "ArrowUp" || e.key == "w"){ //Left
-                if (py>= -50){
+                if (py >= -50){
                     py-= 10
                 }
             } else if(e.key == "ArrowDown" || e.key == "s"){ //Left
-                if (py<= 120){
+                if (py <= 500){
                     py+= 10 
                 }
             }
@@ -108,7 +109,15 @@ function checkey(e){
     //document.getElementById("Rooms").setAttribute("transform", "translate(" + px + "," + py + ")");
     //Code which makes the player actually move
     // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-    $("#player").attr("transform", "translate(" + px + "," + py + ")");
+    console.log(px + " is px");
+    //head movement
+    document.getElementById("head").setAttribute('cx', px + 5);
+    document.getElementById("head").setAttribute('cy', py - 25);
+    //body movement
+    document.getElementById("body").setAttribute('x', px);
+    document.getElementById("body").setAttribute('y', py - 15);
+
+    //$("#player").attr("transform", "translate(" + px + "," + py + ")");
 
     //
     // initialy put player group at 0,0 then copy above command and use it at the start, after that
@@ -117,9 +126,7 @@ function checkey(e){
     // /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 }
 //handle all three
-function move_checks(){
-    
-}
+
 function limit_move(x, y){
     
 }
@@ -129,9 +136,14 @@ function enemy_ready(){
 }
 function enemy_move(){
     if(ex < pcenter){
+        ex -= 10;
+    } else if (ex > pcenter){
         ex += 10;
+    } else{
+        window.location.href = "http://localhost/377wad/11-final-project/web/title.php";
     }
     document.getElementById("evilBlob").setAttribute('x', ex);
+    document.getElementById("evilBlob").setAttribute('y', ey);
 
 }
 function interact(x, y){
