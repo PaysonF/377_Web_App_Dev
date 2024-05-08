@@ -1,11 +1,15 @@
 // Current move method called when key is pressed
-document.onkeydown = checkey;
+if ( window.location.href != "http://localhost/377wad/11-final-project/web/title.php"){
+    document.onkeydown = checkey; 
+    const myTimeout = setTimeout(enemy_ready, 5000);
+}
+
 // Moving Help coords
 
 let px = 340;
 let ex = 100;
 let py = 150;
-let ey = 0;
+let ey = 100;
 let pcenter = 0;
 console.log(pcenter);
 
@@ -14,7 +18,7 @@ let interactList = [50, "Placeholder"];
 let movelimitList = [];
 let transportList = ["Plhold"];
 //Timeout for enemy until needed
-const myTimeout = setTimeout(enemy_ready, 5000);
+
 //Arrays of points that are used by the function roomChange to change the polygon with the id of "Rooms"
 // doorways should always be fifty wide! ex. (100,0 - 150,0)
 //Room variable used to help with roomChange
@@ -52,15 +56,15 @@ function SavesNavigation(str){
 //Function which changes arms and legs positions acccording to the faced direction
 function characterChange(current){
     if (current == "Horizontal"){
-        $("#backArm").attr("transform", "translate(" + 0 + "," + 0 + ")");
-        $("#frontArm").attr("transform", "translate(" + 0 + "," + 0 + ")");
-        $("#backLeg").attr("transform", "translate(" + 0 + "," + 0 + ")");
-        $("#frontLeg").attr("transform", "translate(" + 0 + "," + 0 + ")");
+        $("#Backarm").attr("transform", "translate(" + 0 + "," + 0 + ")");
+        $("#Frontarm").attr("transform", "translate(" + 0 + "," + 0 + ")");
+        $("#Backleg").attr("transform", "translate(" + 0 + "," + 0 + ")");
+        $("#Frontleg").attr("transform", "translate(" + 0 + "," + 0 + ")");
     } else if (current == "Vertical"){
-        $("#backArm").attr("transform", "translate(" + 10 + "," + 0 + ")");
-        $("#frontArm").attr("transform", "translate(" + -10 + "," + 0 + ")");
-        $("#backLeg").attr("transform", "translate(" + 5 + "," + 0 + ")");
-        $("#frontLeg").attr("transform", "translate(" + -5 + "," + 0 + ")");
+        $("#Backarm").attr("transform", "translate(" + 10 + "," + 0 + ")");
+        $("#Frontarm").attr("transform", "translate(" + -10 + "," + 0 + ")");
+        $("#Backleg").attr("transform", "translate(" + 5 + "," + 0 + ")");
+        $("#Frontleg").attr("transform", "translate(" + -5 + "," + 0 + ")");
     }
 }
 
@@ -103,29 +107,39 @@ function checkey(e){
             } else {
                 roomChange(hallway);
             }
-    } else if(e.key == 'x'){
-        //Save to db Here
     }
+
     //document.getElementById("Rooms").setAttribute("transform", "translate(" + px + "," + py + ")");
     //Code which makes the player actually move
     // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
     console.log(px + " is px");
-    //head movement
-    document.getElementById("head").setAttribute('cx', px + 5);
-    document.getElementById("head").setAttribute('cy', py - 25);
-    //body movement
-    document.getElementById("body").setAttribute('x', px);
-    document.getElementById("body").setAttribute('y', py - 15);
-
-    //$("#player").attr("transform", "translate(" + px + "," + py + ")");
-
-    //
-    // initialy put player group at 0,0 then copy above command and use it at the start, after that
-    // start to do some initial fade outs and fade ins reloading or coming from the title screen
-    //
-    // /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+    //movehelp Calls
+    movehelp("Head");
+    movehelp("Body")
+    movehelp("Backarm")
+    movehelp("Frontarm")
+    movehelp("Backleg")
+    movehelp("Frontleg")
+    if (py < 250 && py > 200){
+        //room change
+    }
+    
+    
 }
-//handle all three
+//movement handeler
+function movehelp(bp){
+    if (bp == "Head"){
+        document.getElementById(bp).setAttribute('cx', px + 5);
+        document.getElementById(bp).setAttribute('cy', py - 25);
+    } else if (bp.includes("arm") || bp == "Body") {
+        document.getElementById(bp).setAttribute('x', px);
+        document.getElementById(bp).setAttribute('y', py - 15);
+    } else {
+        document.getElementById(bp).setAttribute('x', px);
+        document.getElementById(bp).setAttribute('y', py + 5);
+    }
+}
+
 
 function limit_move(x, y){
     
@@ -135,13 +149,23 @@ function enemy_ready(){
     setInterval(enemy_move, 250)
 }
 function enemy_move(){
-    if(ex < pcenter){
-        ex -= 10;
-    } else if (ex > pcenter){
+    let tarx = px - 20;
+    let tary = py - 30;
+    if(ex < tarx){
         ex += 10;
-    } else{
-        window.location.href = "http://localhost/377wad/11-final-project/web/title.php";
+    } else if (ex > tarx){
+        ex -= 10;
+    } 
+    if(ey < tary){
+        ey += 10;
+    } else if (ey > tary){
+        ey -= 10;
     }
+    if( ex == tarx && ey == tary){
+        window.location.href = "http://localhost/377wad/11-final-project/web/title.php";  
+    }
+
+    
     document.getElementById("evilBlob").setAttribute('x', ex);
     document.getElementById("evilBlob").setAttribute('y', ey);
 

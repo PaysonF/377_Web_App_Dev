@@ -70,7 +70,9 @@ Player and Enemy Styling
   stroke:white;
 }
 #evilBlob {
-  fill:red;
+  fill:maroon;
+  stroke-width:3px;
+  stroke:red;
 }
 
 /*

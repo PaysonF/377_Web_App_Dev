@@ -41,12 +41,12 @@
             <rect id="hitbox" fill="yellow" width="50" height="50" x="200" y="200"></rect>
             <!-- all id = limb thing -->
             <g id="player">
-                <circle id ="head" cx="345" cy="125" r="10" ></circle> <!--Head-->
-                <rect id="backArm" class="limb" width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmBack-->
-                <rect id="body" width="10" height="25" x="340" y="135" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
-                <rect id="limb" class="limb" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegBack-->
-                <rect id="frontLeg" class="limb" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegFront-->
-                <rect id="frontArm" class="limb"  width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmFront-->
+                <circle id ="Head" cx="345" cy="125" r="10" ></circle> <!--Head-->
+                <rect id="Backarm" class="limb" width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmBack-->
+                <rect id="Body" width="10" height="25" x="340" y="135" rx="5" ry="5"></rect> <!--Body, All body parts should swing when walking-->
+                <rect id="Backleg" class="limb" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegBack-->
+                <rect id="Frontleg" class="limb" width="10" height="20" x="340" y="150" rx="5" ry="5"></rect> <!--LegFront-->
+                <rect id="Frontarm" width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmFront-->
             </g>
 
             <g id="enemy">
