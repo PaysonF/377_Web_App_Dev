@@ -50,7 +50,7 @@
             </g>
 
             <g id="enemy">
-                <rect id="evilBlob" width="50" height="50" x="100" y="100"></rect>
+                <rect id="evilBlob" visibility="hidden" width="50" height="50" x="500" y="210"></rect>
             </g>
             
             <!--Moonlight Spot, make varients later on!-->

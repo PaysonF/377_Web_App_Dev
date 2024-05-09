@@ -1,17 +1,15 @@
 // Current move method called when key is pressed
 if ( window.location.href != "http://localhost/377wad/11-final-project/web/title.php"){
     document.onkeydown = checkey; 
-    const myTimeout = setTimeout(enemy_ready, 5000);
 }
 
 // Moving Help coords
 
 let px = 340;
-let ex = 100;
 let py = 150;
-let ey = 100;
-let pcenter = 0;
-console.log(pcenter);
+let ex = 500;
+let ey = 210;
+
 
 // All variables below use x,y list for various things, interactList dictates areas where the player should be able to use stuff, movelimit list prevents the player from moving when they are at the edge of a room, lastly transport list is where the "doors are" mabye make into part of the interact list but seperate
 let interactList = [50, "Placeholder"];
@@ -22,7 +20,7 @@ let transportList = ["Plhold"];
 //Arrays of points that are used by the function roomChange to change the polygon with the id of "Rooms"
 // doorways should always be fifty wide! ex. (100,0 - 150,0)
 //Room variable used to help with roomChange
-
+var room = "starter";
 // if statements to figure out starting room, based on what page of the website is open
 
 // Hotel Rooms
@@ -55,17 +53,14 @@ function SavesNavigation(str){
 
 //Function which changes arms and legs positions acccording to the faced direction
 function characterChange(current){
-    if (current == "Horizontal"){
-        $("#Backarm").attr("transform", "translate(" + 0 + "," + 0 + ")");
-        $("#Frontarm").attr("transform", "translate(" + 0 + "," + 0 + ")");
-        $("#Backleg").attr("transform", "translate(" + 0 + "," + 0 + ")");
-        $("#Frontleg").attr("transform", "translate(" + 0 + "," + 0 + ")");
-    } else if (current == "Vertical"){
-        $("#Backarm").attr("transform", "translate(" + 10 + "," + 0 + ")");
-        $("#Frontarm").attr("transform", "translate(" + -10 + "," + 0 + ")");
-        $("#Backleg").attr("transform", "translate(" + 5 + "," + 0 + ")");
-        $("#Frontleg").attr("transform", "translate(" + -5 + "," + 0 + ")");
+    var armdis = 0, legdis = 0;
+    if (current == "Vertical"){
+        armdis = 10, legdis = 5;
     }
+    $("#Backarm").attr("transform", "translate(" + armdis + "," + 0 + ")");
+    $("#Frontarm").attr("transform", "translate(" + -armdis + "," + 0 + ")");
+    $("#Backleg").attr("transform", "translate(" + legdis + "," + 0 + ")");
+    $("#Frontleg").attr("transform", "translate(" + -legdis + "," + 0 + ")");
 }
 
 //Function called on key down, handles movement
@@ -99,20 +94,23 @@ function checkey(e){
                     py+= 10 
                 }
             }
-    }   else if(e.key == ' '){ //Interact
+    }   else if(e.key == 'm'){ //Interact
             console.log("xmove: " + px+ ",and ymove? " + py);
             interact(px, py);
             if (room == "hallway"){
                 roomChange(starter); 
+                room = "starter"
             } else {
                 roomChange(hallway);
+                room = "hallway"
             }
+    } else if (e.key == 'x' ){
+        
     }
 
     //document.getElementById("Rooms").setAttribute("transform", "translate(" + px + "," + py + ")");
     //Code which makes the player actually move
     // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-    console.log(px + " is px");
     //movehelp Calls
     movehelp("Head");
     movehelp("Body")
@@ -120,8 +118,10 @@ function checkey(e){
     movehelp("Frontarm")
     movehelp("Backleg")
     movehelp("Frontleg")
-    if (py < 250 && py > 200){
-        //room change
+    if (py < 250 && py > 200 && room != "hallway"){
+        const myTimeout = setTimeout(enemy_ready, 2500);
+        roomChange(hallway);
+        room = "hallway"
     }
     
     
@@ -146,7 +146,11 @@ function limit_move(x, y){
 }
 
 function enemy_ready(){
-    setInterval(enemy_move, 250)
+    if ( room == "hallway") {
+        document.getElementById("evilBlob").setAttribute('visibility', 'visible');
+        setInterval(enemy_move, 250)
+    }
+        
 }
 function enemy_move(){
     let tarx = px - 20;
@@ -164,16 +168,12 @@ function enemy_move(){
     if( ex == tarx && ey == tary){
         window.location.href = "http://localhost/377wad/11-final-project/web/title.php";  
     }
-
-    
     document.getElementById("evilBlob").setAttribute('x', ex);
     document.getElementById("evilBlob").setAttribute('y', ey);
-
 }
 function interact(x, y){
     console.log("Interaction")
 } 
-
 function roomFade(time, type){
     //Lots of fade out statements
     if (type == "Out"){
@@ -185,15 +185,11 @@ function roomFade(time, type){
         $("#Rooms").fadeIn(time);
         $("#player").fadeIn(time);
         if (room == "starter"){
-            $(".Objects").fadeIn(1500);
+            $(".Objects" + room).fadeIn(1500);
         }
     }
 }
 function roomChange(destination){
-    if (room == "starter"){
-        room = "hallway"  
-    } else if (room == "hallway")
-        room = "starter" 
     var delay = 1000;
     roomFade(delay, "Out");
     sleep(delay).then(() => { document.getElementById("Rooms").setAttribute("points", destination); });
