@@ -3,25 +3,18 @@ if ( window.location.href != "http://localhost/377wad/11-final-project/web/title
     document.onkeydown = checkey; 
 }
 
-// Moving Help coords
+// Moving Help coords ( Player & enemy )
 
 let px = 340;
 let py = 150;
 let ex = 500;
 let ey = 210;
 
-
-// All variables below use x,y list for various things, interactList dictates areas where the player should be able to use stuff, movelimit list prevents the player from moving when they are at the edge of a room, lastly transport list is where the "doors are" mabye make into part of the interact list but seperate
-let interactList = [50, "Placeholder"];
-let movelimitList = [];
-let transportList = ["Plhold"];
-//Timeout for enemy until needed
-
-//Arrays of points that are used by the function roomChange to change the polygon with the id of "Rooms"
-// doorways should always be fifty wide! ex. (100,0 - 150,0)
+// doorways should always be about fifty wide! ex. (100,0 - 150,0)
 //Room variable used to help with roomChange
 var room = "starter";
-// if statements to figure out starting room, based on what page of the website is open
+
+//Arrays of points that are used by the function roomChange to change the polygon with the id of "Rooms"
 
 // Hotel Rooms
 let starter = [[300,100], [300,200], [200,200], [200,300], [300,300], [600,300], [600,100]];
@@ -94,23 +87,10 @@ function checkey(e){
                     py+= 10 
                 }
             }
-    }   else if(e.key == 'm'){ //Interact
-            console.log("xmove: " + px+ ",and ymove? " + py);
-            interact(px, py);
-            if (room == "hallway"){
-                roomChange(starter); 
-                room = "starter"
-            } else {
-                roomChange(hallway);
-                room = "hallway"
-            }
-    } else if (e.key == 'x' ){
+            //Save Checkpoint
+    } else if (e.kkey == "x"){
         
     }
-
-    //document.getElementById("Rooms").setAttribute("transform", "translate(" + px + "," + py + ")");
-    //Code which makes the player actually move
-    // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
     //movehelp Calls
     movehelp("Head");
     movehelp("Body")
@@ -118,13 +98,19 @@ function checkey(e){
     movehelp("Frontarm")
     movehelp("Backleg")
     movehelp("Frontleg")
-    if (py < 250 && py > 200 && room != "hallway"){
+    //Changes room to hallway when in spot]
+    if (py < 250 && py > 200 && room != "hallway" && px < 200 && px > 100){
         const myTimeout = setTimeout(enemy_ready, 2500);
+        document.getElementById('hitbox').setAttribute('visibility', 'hidden');
         roomChange(hallway);
         room = "hallway"
+    } else if (py < 180 && py > 150 && room == "hallway" && px < 190 && px > 150){
+        document.getElementById('evilBlob').setAttribute('visibility', 'hidden');
+        document.getElementById('hitbox').setAttribute('visibility', 'hidden');
+        roomChange(starter);
+        room = "starter"
     }
-    
-    
+        
 }
 //movement handeler
 function movehelp(bp){
@@ -139,18 +125,12 @@ function movehelp(bp){
         document.getElementById(bp).setAttribute('y', py + 5);
     }
 }
-
-
-function limit_move(x, y){
-    
-}
-
 function enemy_ready(){
-    if ( room == "hallway") {
-        document.getElementById("evilBlob").setAttribute('visibility', 'visible');
-        setInterval(enemy_move, 250)
-    }
-        
+    document.getElementById("evilBlob").setAttribute('visibility', 'visible');
+    ex = 500, ey = 210;
+    document.getElementById("evilBlob").setAttribute('x', ex);
+    document.getElementById("evilBlob").setAttribute('y', ey);
+    setInterval(enemy_move, 500)
 }
 function enemy_move(){
     let tarx = px - 20;
@@ -165,15 +145,13 @@ function enemy_move(){
     } else if (ey > tary){
         ey -= 10;
     }
-    if( ex == tarx && ey == tary){
+    if( ex == tarx && ey == tary && room == "hallway"){
         window.location.href = "http://localhost/377wad/11-final-project/web/title.php";  
     }
     document.getElementById("evilBlob").setAttribute('x', ex);
     document.getElementById("evilBlob").setAttribute('y', ey);
 }
-function interact(x, y){
-    console.log("Interaction")
-} 
+
 function roomFade(time, type){
     //Lots of fade out statements
     if (type == "Out"){

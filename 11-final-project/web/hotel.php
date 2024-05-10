@@ -27,19 +27,10 @@
                 <rect width="20" height="1" x="335" y="190"></rect>
             </g>
                 
-            <g class="Objects">
-                <rect id="lid"></rect>
-                <rect id="glass"></rect>
-                <rect id="candle"></rect>
-                <rect id="bottom"></rect>
-            </g>
+            <polygon class="Objects" id="Lantern" points = "500,400 510,385 520,400 520,425 508,425 508,412 512,412 512,425 500,425" stroke="white" stroke-width="1.25"></polygon>
             
-                <polygon class="Objects" id="Lantern" points = "500,400 510,385 520,400 520,425 508,425 508,412 512,412 512,425 500,425" stroke="white" stroke-width="1.25"></polygon>
-            <!--Character, try to link from a different file alongside srcs and organize it so everything is in right place-->
-            <!--Left To Right State-->
-            <!---->
-            <rect id="hitbox" fill="yellow" width="50" height="50" x="200" y="200"></rect>
-            <!-- all id = limb thing -->
+            <rect id="hitbox" fill="gray" width="5" height="50" x="200" y="200"></rect>
+            
             <g id="player">
                 <circle id ="Head" cx="345" cy="125" r="10" ></circle> <!--Head-->
                 <rect id="Backarm" class="limb" width="10" height="20" x="340" y="132" rx="5" ry="5"></rect> <!--ArmBack-->
@@ -52,17 +43,6 @@
             <g id="enemy">
                 <rect id="evilBlob" visibility="hidden" width="50" height="50" x="500" y="210"></rect>
             </g>
-            
-            <!--Moonlight Spot, make varients later on!-->
-            
-
-
-                            <!--Button to Move into other rooms for testing stuff
-            <g id="test" onclick="">
-                <rect fill="blue" stroke="green"  stroke-width="5" width="100" height="100" x="850" y="10"></rect>
-                <text x="868" y="73" fill="white" font-size="40">Test</text>
-            </g>
--->
         </svg>
     </body>
 </html>
