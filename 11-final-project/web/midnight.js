@@ -88,8 +88,8 @@ function checkey(e){
                 }
             }
             //Save Checkpoint
-    } else if (e.kkey == "x"){
-        
+    } else if (e.key == "x"){
+        window.location.href = "http://localhost/377wad/11-final-project/web/save.php";
     }
     //movehelp Calls
     movehelp("Head");
