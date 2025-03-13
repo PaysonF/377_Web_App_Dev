@@ -29,8 +29,8 @@ Objects Stuff
   stroke:white;
 }
 
-#Lamp {
-  fill:black
+#Lantern {
+  transform: translateY(-250px)
 }
 /*
 Text Stuff
