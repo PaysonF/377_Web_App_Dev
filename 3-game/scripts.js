@@ -5,13 +5,12 @@ $(document).ready(function() {
 var angleAmount = 0;
 var start = false;
 var midfire = false;
-var tutorial = false;
+var tutorial = true;
 var angley = 10;
 var anglex = 10;
 var expansion = 15;
 
 function gameStart(){
-    
     if (tutorial == true){
         $('#tutStuff').show()
         $('#mainmenu').show()
@@ -29,10 +28,11 @@ function tutStart(){
     cannon = document.getElementById("barrel");
 }
 
+gameStart();
 function boomAnimation(){
     $("#ball").attr('r', expansion);
-    if(expansion < 29){
-        expansion += 1;
+    if(expansion < 36){
+        expansion += 6;
     } else{
         clearInterval(boomIntervalId)
     }
@@ -42,8 +42,8 @@ var shootIntervalId = 0;
 var thing = 25;
 function shoot(){
     if( midfire == false){
-        $("#ball").attr('cx', 118.4);
-        $("#ball").attr('cy', 686);
+        $("#ball").attr('cx', 200);
+        $("#ball").attr('cy', 927);
         $("#ball").attr('r', 15);
         midfire = true
         angley = 50 - angleAmount
@@ -83,7 +83,7 @@ function changeAim(e){
             shoot();
         }
         cannon = document.getElementById("barrel");
-        cannon.setAttribute("transform", "rotate(" + angleAmount + ",118.4, 686)");
+        cannon.setAttribute("transform", "rotate(" + angleAmount + ",200, 927)");
     }
 }
     
